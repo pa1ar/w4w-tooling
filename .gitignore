@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+
+# Environment and credentials
+.env
+.env.*
+!.env.example
+.osm_token.json
+OSM_app_credentials.txt
+
+# Local raw data and generated artifacts
+telemetry_json/*
+!telemetry_json/.gitkeep
+output/*
+!output/.gitkeep
+pending_upload/*
+!pending_upload/.gitkeep
+
+# OS/editor
+.DS_Store
+*.swp

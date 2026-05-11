@@ -1,0 +1,20 @@
+[project]
+name = "w4w-tooling"
+version = "0.1.0"
+description = "Wheels4Wheels telemetry-to-OSM smoothness pipeline and CLIs"
+readme = "README.md"
+requires-python = ">=3.12.8"
+dependencies = [
+    "folium>=0.20.0",
+    "jupyter>=1.1.1",
+    "lxml>=6.0.2",
+    "matplotlib>=3.10.7",
+    "nbconvert>=7.16.6",
+    "pandas>=2.3.3",
+    "plotly>=6.3.1",
+    "pyproj>=3.7.2",
+    "python-dotenv>=1.1.1",
+    "requests>=2.32.5",
+    "requests-oauthlib>=2.0.0",
+    "shapely>=2.1.2",
+]

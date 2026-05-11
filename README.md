@@ -1,0 +1,61 @@
+# W4W Tooling
+
+Python pipeline and OpenStreetMap CLIs for Wheels4Wheels smoothness proposals.
+
+This repo turns e-scooter telemetry into OSM `smoothness=*` review artifacts:
+
+- per-way proposal CSVs
+- Mapbox review maps
+- GeoJSON for dashboard/demo use
+- optional OSM upload manifests and edit commands
+
+The dashboard and public website live outside this repo.
+
+## Setup
+
+```bash
+uv sync
+cp .env.example .env
+```
+
+Add `MAPBOX_ACCESS_TOKEN` to `.env`. OSM OAuth variables are only needed for `osm_edit.py`.
+
+## Run Sample
+
+```bash
+uv run python scripts/OSM/OSM_smoothness_workflow.py \
+  --input example_data/258276934-579126.json \
+  --out-csv output/smoothness_proposals.csv \
+  --out-map output/smoothness_proposals.html
+```
+
+## Batch Pipeline
+
+Full telemetry files are local-only and gitignored under `telemetry_json/`.
+
+```bash
+uv run python scripts/OSM/select_rides.py --top-n 10
+uv run python scripts/OSM/run_pipeline_batch.py
+```
+
+Batch output lands in `output/`, including `batch_manifest.json`, per-ride proposal CSVs, maps, and GeoJSON.
+
+## OSM Edit CLI
+
+```bash
+uv run python scripts/OSM/osm_edit.py login
+uv run python scripts/OSM/osm_edit.py set-tag \
+  --way-id 123456 \
+  --key smoothness \
+  --value intermediate \
+  --comment "W4W: smoothness from scooter telemetry"
+```
+
+Tokens are stored in `.osm_token.json`, which is gitignored.
+
+## Data Policy
+
+- Do not commit raw telemetry.
+- Do not commit generated `output/`.
+- Do not commit `.env`, `.osm_token.json`, or OAuth credentials.
+- Keep `example_data/` small and safe for reproducible verification.
