@@ -74,6 +74,7 @@ parser.add_argument('--out-csv', type=str, default=str(PROJECT_ROOT / 'output' /
 parser.add_argument('--out-map', type=str, default=str(PROJECT_ROOT / 'output' / 'smoothness_proposals.html'), help='Output HTML Mapbox review map')
 parser.add_argument('--raw-map-html', type=str, default=str(PROJECT_ROOT / 'output' / 'raw_map.html'), help='Output HTML for raw GPS map')
 parser.add_argument('--out-ways-geojson', type=str, help='Output GeoJSON with proposal way geometries (defaults to output/proposals_geojson/<source>.geojson)')
+parser.add_argument('--out-gps-geojson', type=str, default=str(PROJECT_ROOT / 'output' / 'gps_path.json'), help='Output GeoJSON with raw GPS path')
 parser.add_argument('--buffer-m', type=float, default=18.0, help='Corridor clip buffer width in meters')
 parser.add_argument('--bbox-pad', type=float, default=0.002, help='Bounding box padding in degrees')
 parser.add_argument('--tolerance-m', type=float, default=25.0, help='Assignment tolerance in meters')
@@ -92,6 +93,7 @@ INPUT = Path(args.input)
 OUT_CSV = Path(args.out_csv)
 OUT_MAP = Path(args.out_map)
 OUT_RAWMAP = Path(args.raw_map_html)
+OUT_GPS_GEOJSON = Path(args.out_gps_geojson)
 if args.out_ways_geojson:
     OUT_WAY_GEOJSON = Path(args.out_ways_geojson)
 else:
@@ -226,17 +228,15 @@ except Exception:
 
 # Skip inline raw GPS figure to streamline workflow (HTML written later)
 
-# Export raw GPS path for the website animation (GeoJSON LineString)
+# Export raw GPS path (GeoJSON LineString)
 try:
     import importlib.util as _imp_export
     _exp_path = scripts_osm / 'export_gps_path_geojson.py'
     _exp_spec = _imp_export.spec_from_file_location('export_gps', _exp_path)
     export_gps = _imp_export.module_from_spec(_exp_spec)
     _exp_spec.loader.exec_module(export_gps)  # type: ignore
-    # destination in the web app
-    web_path = (PROJECT_ROOT / '..' / 'w4w' / 'public' / 'data' / 'gps_path.json').resolve()
-    export_gps.write_gps_path_geojson(df_cls[['lon','lat']], web_path)
-    print(f'Wrote web GPS path GeoJSON: {web_path}')
+    export_gps.write_gps_path_geojson(df_cls[['lon','lat']], OUT_GPS_GEOJSON)
+    print(f'Wrote GPS path GeoJSON: {OUT_GPS_GEOJSON}')
 except Exception as _exp_err:
     print('GPS path export skipped:', _exp_err)
 
