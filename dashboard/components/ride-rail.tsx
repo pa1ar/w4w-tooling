@@ -6,7 +6,7 @@ import type { ManifestRide, RideStatus } from "@/lib/manifest";
 import { cn } from "@/lib/utils";
 
 const TOOLING_REPO_URL =
-  process.env.NEXT_PUBLIC_W4W_TOOLING_REPO_URL || "https://github.com/pa1ar/w4w";
+  process.env.NEXT_PUBLIC_W4W_TOOLING_REPO_URL || "https://github.com/pa1ar/w4w-tooling";
 
 interface RailItem {
   ride: ManifestRide;

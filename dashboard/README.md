@@ -38,7 +38,7 @@ W4W_DASHBOARD_MODE=demo
 Optional env:
 
 ```
-NEXT_PUBLIC_W4W_TOOLING_REPO_URL=https://github.com/<org>/w4w-tooling
+NEXT_PUBLIC_W4W_TOOLING_REPO_URL=https://github.com/pa1ar/w4w-tooling
 ```
 
 `vercel.json` sets the demo-mode flags by default. Do not set OSM OAuth vars on the public demo.
