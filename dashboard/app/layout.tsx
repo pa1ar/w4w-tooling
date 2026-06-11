@@ -16,7 +16,7 @@ const mono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "W4W Review",
+  title: "Wheels4Wheels: Tooling",
   description: "Local review dashboard for OSM smoothness proposals",
 };
 
