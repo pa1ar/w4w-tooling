@@ -1,0 +1,12 @@
+{"ts":"2026-06-09T14:12:24.000Z","ride_id":"258276934","way_id":26592782,"key":"smoothness","value":"intermediate","status":"ok","source":"demo"}
+{"ts":"2026-06-09T14:14:02.000Z","ride_id":"258276934","way_id":33734161,"key":"smoothness","value":"intermediate","status":"ok","source":"demo"}
+{"ts":"2026-06-09T14:16:47.000Z","ride_id":"258276934","way_id":33734236,"key":"smoothness","value":"intermediate","status":"ok","source":"demo"}
+{"ts":"2026-06-09T14:19:31.000Z","ride_id":"258276934","way_id":37761814,"key":"smoothness","value":"intermediate","status":"ok","source":"demo"}
+{"ts":"2026-06-09T14:22:08.000Z","ride_id":"258276934","way_id":379809980,"key":"smoothness","value":"bad","status":"ok","source":"demo"}
+{"ts":"2026-06-09T14:25:52.000Z","ride_id":"258276934","way_id":50262276,"key":"smoothness","value":"intermediate","status":"ok","source":"demo"}
+{"ts":"2026-06-09T14:29:15.000Z","ride_id":"257672714","way_id":4850750,"key":"smoothness","value":"intermediate","status":"ok","source":"demo"}
+{"ts":"2026-06-09T14:31:39.000Z","ride_id":"257672714","way_id":25543078,"key":"smoothness","value":"bad","status":"ok","source":"demo"}
+{"ts":"2026-06-09T14:36:05.000Z","ride_id":"257673408","way_id":4615630,"key":"smoothness","value":"bad","status":"ok","source":"demo"}
+{"ts":"2026-06-09T14:38:11.000Z","ride_id":"257673408","way_id":4846751,"key":"smoothness","value":"bad","status":"ok","source":"demo"}
+{"ts":"2026-06-09T14:43:26.000Z","ride_id":"257814809","way_id":4811709,"key":"smoothness","value":"intermediate","status":"ok","source":"demo"}
+{"ts":"2026-06-09T14:45:58.000Z","ride_id":"258232037","way_id":4811710,"key":"smoothness","value":"intermediate","status":"ok","source":"demo"}

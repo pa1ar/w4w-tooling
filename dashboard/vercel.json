@@ -1,0 +1,9 @@
+{
+  "framework": "nextjs",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm build",
+  "env": {
+    "NEXT_PUBLIC_W4W_DEMO_MODE": "1",
+    "W4W_DASHBOARD_MODE": "demo"
+  }
+}

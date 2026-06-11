@@ -1,0 +1,3177 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.748091169620267,
+            59.444222079388304
+          ],
+          [
+            24.7480362,
+            59.44426459999998
+          ],
+          [
+            24.74797112247617,
+            59.444399988641095
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 9455174,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "",
+        "coverage_pct": 0.0,
+        "agree_pct": 0.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.4,
+        "counts": "{\"very_bad\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.75393822852001,
+            59.44295866400843
+          ],
+          [
+            24.7540711,
+            59.442972799999986
+          ],
+          [
+            24.754218399999996,
+            59.44298849999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 26592782,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.287,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.7,
+        "counts": "{\"excellent\": 3}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.757604099999995,
+            59.44507829999999
+          ],
+          [
+            24.7573535,
+            59.44508580000001
+          ],
+          [
+            24.756134399999997,
+            59.44507909999999
+          ],
+          [
+            24.755692699999997,
+            59.445071399999996
+          ],
+          [
+            24.754548999999997,
+            59.4450227
+          ],
+          [
+            24.754457299999995,
+            59.445015799999986
+          ],
+          [
+            24.754232700000003,
+            59.44500519999998
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 26701647,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "good",
+        "coverage_pct": 0.907,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.379,
+        "counts": "{\"good\": 25}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.754218399999996,
+            59.44298849999999
+          ],
+          [
+            24.7539543,
+            59.443555100000005
+          ],
+          [
+            24.7539474,
+            59.44356649999999
+          ],
+          [
+            24.753921281562203,
+            59.44360978618505
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 33734161,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.558,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.646,
+        "counts": "{\"excellent\": 5, \"good\": 3}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.753393599999995,
+            59.443446999999985
+          ],
+          [
+            24.753503599999995,
+            59.44349390000001
+          ],
+          [
+            24.7535983,
+            59.443509799999994
+          ],
+          [
+            24.7539543,
+            59.443555100000005
+          ],
+          [
+            24.754013854825054,
+            59.443562576222824
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 33734236,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.838,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.613,
+        "counts": "{\"good\": 2, \"excellent\": 9}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              24.75321,
+              59.44381749999999
+            ],
+            [
+              24.7533084,
+              59.44382769999999
+            ],
+            [
+              24.753361999999996,
+              59.443828899999986
+            ],
+            [
+              24.7536264,
+              59.443840699999996
+            ],
+            [
+              24.75417559716835,
+              59.44386834942899
+            ]
+          ],
+          [
+            [
+              24.754236190225768,
+              59.443870971266975
+            ],
+            [
+              24.7543915,
+              59.443874599999994
+            ],
+            [
+              24.754549499999996,
+              59.44388210000001
+            ],
+            [
+              24.754604299999997,
+              59.443880899999996
+            ],
+            [
+              24.7547751,
+              59.4438891
+            ],
+            [
+              24.7555788,
+              59.44401529999998
+            ],
+            [
+              24.7560113,
+              59.444070299999986
+            ],
+            [
+              24.756579499999997,
+              59.444142499999984
+            ],
+            [
+              24.7571999,
+              59.44423719999999
+            ],
+            [
+              24.7581816,
+              59.4443738
+            ],
+            [
+              24.7582465,
+              59.44443059999999
+            ],
+            [
+              24.758294699999997,
+              59.444436399999994
+            ],
+            [
+              24.7583923,
+              59.44444819999998
+            ],
+            [
+              24.758404605664765,
+              59.44444963885237
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 37761810,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 1.397,
+        "agree_pct": 0.975,
+        "bad_run_m": 17.0,
+        "confidence_wheelchair": 0.438,
+        "counts": "{\"excellent\": 157, \"good\": 35, \"intermediate\": 5, \"bad\": 5}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.752974199999997,
+            59.443817800000005
+          ],
+          [
+            24.7529767,
+            59.44374919999999
+          ],
+          [
+            24.752990199999996,
+            59.443704299999986
+          ],
+          [
+            24.7529991,
+            59.443671999999985
+          ],
+          [
+            24.7530967,
+            59.443601099999995
+          ],
+          [
+            24.7531538,
+            59.4435648
+          ],
+          [
+            24.753247199999997,
+            59.443521800000006
+          ],
+          [
+            24.7533366,
+            59.443485999999986
+          ],
+          [
+            24.753393599999995,
+            59.443446999999985
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 37761814,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.856,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.6,
+        "counts": "{\"excellent\": 10, \"good\": 3}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7542208,
+            59.4450789
+          ],
+          [
+            24.753239999999998,
+            59.44504779999998
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 39229218,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.689,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.357,
+        "counts": "{\"good\": 5}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.746478059349528,
+            59.44443932855518
+          ],
+          [
+            24.7465038,
+            59.44436779999999
+          ],
+          [
+            24.7465111,
+            59.44435179999999
+          ],
+          [
+            24.746516,
+            59.444311000000006
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 47000549,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "good",
+        "coverage_pct": 0.0,
+        "agree_pct": 0.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.291,
+        "counts": "{\"very_bad\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.752772418437356,
+            59.445028979792504
+          ],
+          [
+            24.7531438,
+            59.44504309999998
+          ],
+          [
+            24.753239999999998,
+            59.44504779999998
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 50262276,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.824,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.4,
+        "counts": "{\"good\": 3}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7573175,
+            59.4431408
+          ],
+          [
+            24.7574608,
+            59.442947100000005
+          ],
+          [
+            24.7576345,
+            59.4429791
+          ],
+          [
+            24.75897760103757,
+            59.44322755100234
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 50262279,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 3.176,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.358,
+        "counts": "{\"good\": 20, \"excellent\": 106}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7568351,
+            59.44518369999999
+          ],
+          [
+            24.755783399999995,
+            59.44514059999999
+          ],
+          [
+            24.7544443,
+            59.44508870000001
+          ],
+          [
+            24.7543223,
+            59.44508389999999
+          ],
+          [
+            24.7542208,
+            59.4450789
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 50262281,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.981,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.429,
+        "counts": "{\"good\": 3, \"excellent\": 9}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.755618206086865,
+            59.44395817485446
+          ],
+          [
+            24.7555999,
+            59.443984699999994
+          ],
+          [
+            24.7555788,
+            59.44401529999998
+          ],
+          [
+            24.755429798289857,
+            59.444269767039195
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 68454079,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 1.604,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.209,
+        "counts": "{\"excellent\": 123, \"good\": 7}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.754232700000003,
+            59.44500519999998
+          ],
+          [
+            24.753252099999997,
+            59.44496749999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 111995958,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "good",
+        "coverage_pct": 0.798,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.4,
+        "counts": "{\"good\": 3}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.754218399999996,
+            59.44298849999999
+          ],
+          [
+            24.754431305563365,
+            59.44301160648612
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 155775906,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.0,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.7,
+        "counts": "{\"good\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              24.7516089,
+              59.44483290000001
+            ],
+            [
+              24.751497630597918,
+              59.44483081009554
+            ]
+          ],
+          [
+            [
+              24.751295660424145,
+              59.444827353690044
+            ],
+            [
+              24.7512651,
+              59.4448291
+            ],
+            [
+              24.751183399999995,
+              59.44483379999999
+            ],
+            [
+              24.751062599999997,
+              59.444848799999995
+            ],
+            [
+              24.750981199999995,
+              59.44486559999999
+            ],
+            [
+              24.750819099999998,
+              59.444898999999985
+            ],
+            [
+              24.750656500000005,
+              59.44493599999998
+            ],
+            [
+              24.750415899999997,
+              59.44499069999999
+            ],
+            [
+              24.7503886,
+              59.444996899999985
+            ],
+            [
+              24.749787099999995,
+              59.44513739999999
+            ],
+            [
+              24.749522799999998,
+              59.4451936
+            ],
+            [
+              24.749169299999995,
+              59.445282
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 379809980,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "bad",
+        "existing_smoothness": "",
+        "coverage_pct": 0.82,
+        "agree_pct": 0.304,
+        "bad_run_m": 72.2,
+        "confidence_wheelchair": 0.425,
+        "counts": "{\"intermediate\": 7, \"very_bad\": 16}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.748945484492808,
+            59.445205108402604
+          ],
+          [
+            24.7487737,
+            59.44522829999998
+          ],
+          [
+            24.7487245,
+            59.44523029999999
+          ],
+          [
+            24.748613448359617,
+            59.44523468701294
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 456810564,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.559,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.583,
+        "counts": "{\"intermediate\": 2, \"good\": 2}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.744569673206254,
+            59.444649241482054
+          ],
+          [
+            24.7445387,
+            59.44457429999999
+          ],
+          [
+            24.744536699999998,
+            59.444568999999994
+          ],
+          [
+            24.744520299999998,
+            59.44452570000001
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 509484058,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 0.428,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.4,
+        "counts": "{\"good\": 1, \"intermediate\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7582864,
+            59.44546659999999
+          ],
+          [
+            24.758045900000003,
+            59.44563669999999
+          ],
+          [
+            24.7579527,
+            59.44572449999998
+          ],
+          [
+            24.757895390070317,
+            59.44578845456426
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 556550117,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.076,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.55,
+        "counts": "{\"excellent\": 1, \"good\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7568351,
+            59.44518369999999
+          ],
+          [
+            24.757258,
+            59.44519239999999
+          ],
+          [
+            24.757512999999996,
+            59.4452182
+          ],
+          [
+            24.757665499999998,
+            59.445222599999994
+          ],
+          [
+            24.757674566958496,
+            59.44522083225966
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 556550118,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 1.291,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.4,
+        "counts": "{\"good\": 4}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7578963,
+            59.445168399999986
+          ],
+          [
+            24.758019899999997,
+            59.44508109999999
+          ],
+          [
+            24.758050199999996,
+            59.445053499999986
+          ],
+          [
+            24.7580918,
+            59.44500419999999
+          ],
+          [
+            24.758120499999997,
+            59.4449701
+          ],
+          [
+            24.7581366,
+            59.44495099999999
+          ],
+          [
+            24.758217,
+            59.44484449999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 556550120,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.775,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.377,
+        "counts": "{\"excellent\": 6}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.758504121018383,
+            59.44528166040238
+          ],
+          [
+            24.7585597,
+            59.44530799999999
+          ],
+          [
+            24.7587181,
+            59.445347299999995
+          ],
+          [
+            24.758871763269887,
+            59.44537250424248
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 556550122,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.157,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.4,
+        "counts": "{\"excellent\": 2}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7581178,
+            59.445660399999994
+          ],
+          [
+            24.758045900000003,
+            59.44563669999999
+          ],
+          [
+            24.757991499999996,
+            59.44561879999999
+          ],
+          [
+            24.757923699999996,
+            59.44560929999999
+          ],
+          [
+            24.7578759,
+            59.4456039
+          ],
+          [
+            24.7578378,
+            59.44559709999997
+          ],
+          [
+            24.7578033,
+            59.44557819999999
+          ],
+          [
+            24.7577002,
+            59.445487799999995
+          ],
+          [
+            24.757524000000004,
+            59.44538279999998
+          ],
+          [
+            24.757408999999996,
+            59.445328299999986
+          ],
+          [
+            24.757335699999995,
+            59.44529479999999
+          ],
+          [
+            24.757208,
+            59.4452658
+          ],
+          [
+            24.757038199999997,
+            59.44524559999999
+          ],
+          [
+            24.756646599999996,
+            59.4452191
+          ],
+          [
+            24.755962887100953,
+            59.44519626510556
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 556550126,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 1.469,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.24,
+        "counts": "{\"good\": 13, \"excellent\": 301, \"intermediate\": 12}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              24.761086299999995,
+              59.4467122
+            ],
+            [
+              24.760939699999998,
+              59.44662259999998
+            ]
+          ],
+          [
+            [
+              24.760939699999998,
+              59.44662259999998
+            ],
+            [
+              24.7606062,
+              59.44652149999999
+            ],
+            [
+              24.7599079,
+              59.44631099999999
+            ],
+            [
+              24.7590296,
+              59.44619110000001
+            ],
+            [
+              24.7580017,
+              59.446058199999996
+            ],
+            [
+              24.758036499999996,
+              59.44599879999999
+            ],
+            [
+              24.7580729,
+              59.44593489999999
+            ],
+            [
+              24.758031299999995,
+              59.4459005
+            ],
+            [
+              24.7580243,
+              59.4458734
+            ],
+            [
+              24.7581178,
+              59.445660399999994
+            ],
+            [
+              24.758251199999997,
+              59.44556659999999
+            ],
+            [
+              24.758365599999998,
+              59.4455226
+            ],
+            [
+              24.7584428,
+              59.4455106
+            ],
+            [
+              24.758506,
+              59.445507599999985
+            ],
+            [
+              24.7586342,
+              59.445511999999994
+            ],
+            [
+              24.7601643,
+              59.44572339999999
+            ],
+            [
+              24.760263099999996,
+              59.4457542
+            ],
+            [
+              24.760280702350585,
+              59.44576303928355
+            ]
+          ],
+          [
+            [
+              24.76102717081269,
+              59.44656630846107
+            ],
+            [
+              24.761025399999998,
+              59.44656750000001
+            ],
+            [
+              24.760939699999998,
+              59.44662259999998
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 556550127,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "good",
+        "coverage_pct": 2.232,
+        "agree_pct": 0.89,
+        "bad_run_m": 172.7,
+        "confidence_wheelchair": 0.331,
+        "counts": "{\"good\": 139, \"excellent\": 291, \"intermediate\": 47, \"very_bad\": 35, \"bad\": 24}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7586342,
+            59.445511999999994
+          ],
+          [
+            24.758667099999997,
+            59.445444599999995
+          ],
+          [
+            24.7587181,
+            59.445347299999995
+          ],
+          [
+            24.758750299999996,
+            59.44528429999999
+          ],
+          [
+            24.758603,
+            59.445238499999995
+          ],
+          [
+            24.7585164,
+            59.4451803
+          ],
+          [
+            24.758488270010293,
+            59.445082777330754
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 556550128,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 1.891,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.389,
+        "counts": "{\"excellent\": 106, \"good\": 18}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.75830950569896,
+            59.44495099999999
+          ],
+          [
+            24.7581366,
+            59.44495099999999
+          ],
+          [
+            24.758052199999998,
+            59.4449557
+          ],
+          [
+            24.758015799999995,
+            59.444957699999996
+          ],
+          [
+            24.7579791,
+            59.444970699999985
+          ],
+          [
+            24.757888599999998,
+            59.44500289999999
+          ],
+          [
+            24.7578188,
+            59.445033099999996
+          ],
+          [
+            24.7577528,
+            59.44504729999999
+          ],
+          [
+            24.7576219,
+            59.445057899999995
+          ],
+          [
+            24.757604099999995,
+            59.44507829999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 556550129,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 0.091,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.191,
+        "counts": "{\"good\": 1, \"excellent\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.758015799999995,
+            59.444957699999996
+          ],
+          [
+            24.758050199999996,
+            59.44489309999999
+          ],
+          [
+            24.7581905,
+            59.44457879999999
+          ],
+          [
+            24.7582465,
+            59.44443059999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 556550130,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 0.924,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.239,
+        "counts": "{\"excellent\": 93, \"good\": 8}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.75714152898059,
+            59.4443138719004
+          ],
+          [
+            24.7571999,
+            59.44423719999999
+          ],
+          [
+            24.757206199999995,
+            59.444224899999995
+          ],
+          [
+            24.757230899999996,
+            59.44417659999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 590185096,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.0,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.379,
+        "counts": "{\"excellent\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.743504499999997,
+            59.4447046
+          ],
+          [
+            24.743523099999997,
+            59.44473319999999
+          ],
+          [
+            24.74363700671336,
+            59.444907900440036
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 624150221,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.19,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.317,
+        "counts": "{\"intermediate\": 7, \"excellent\": 8}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.75327177574372,
+            59.44362418755125
+          ],
+          [
+            24.7532217,
+            59.443617299999985
+          ],
+          [
+            24.7530967,
+            59.443601099999995
+          ],
+          [
+            24.753024799999995,
+            59.44359309999999
+          ],
+          [
+            24.752941553320763,
+            59.44358225490972
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 636371686,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.124,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.648,
+        "counts": "{\"excellent\": 2}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.757859642257273,
+            59.44572615118985
+          ],
+          [
+            24.757923699999996,
+            59.44560929999999
+          ],
+          [
+            24.7579212,
+            59.44554879999999
+          ],
+          [
+            24.757920199999997,
+            59.44552479999999
+          ],
+          [
+            24.757894293755246,
+            59.445480319479195
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 638498968,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 1.174,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.179,
+        "counts": "{\"excellent\": 307, \"intermediate\": 2}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.753252099999997,
+            59.44496749999999
+          ],
+          [
+            24.752862899999997,
+            59.44495039999999
+          ],
+          [
+            24.7526069,
+            59.44493940000001
+          ],
+          [
+            24.752494299999995,
+            59.44493079999999
+          ],
+          [
+            24.7523756,
+            59.44491799999999
+          ],
+          [
+            24.752130600000005,
+            59.44488799999999
+          ],
+          [
+            24.751843399999995,
+            59.44484549999999
+          ],
+          [
+            24.751742200000002,
+            59.444836299999984
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 643172746,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.897,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.365,
+        "counts": "{\"good\": 10}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.749169299999995,
+            59.445282
+          ],
+          [
+            24.748979899999995,
+            59.445326099999996
+          ],
+          [
+            24.748831699999997,
+            59.44531409999998
+          ],
+          [
+            24.748740899999998,
+            59.445308199999985
+          ],
+          [
+            24.748681295883344,
+            59.44530437812248
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 643172748,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 0.555,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.5,
+        "counts": "{\"intermediate\": 3}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.757731425723573,
+            59.445382965818034
+          ],
+          [
+            24.757454099999997,
+            59.44528779999999
+          ],
+          [
+            24.7572409,
+            59.4452386
+          ],
+          [
+            24.7568351,
+            59.44518369999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 643172749,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.573,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.323,
+        "counts": "{\"good\": 3}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.757604099999995,
+            59.44507829999999
+          ],
+          [
+            24.7575895,
+            59.4450967
+          ],
+          [
+            24.7575706,
+            59.44512060000001
+          ],
+          [
+            24.757512999999996,
+            59.4452182
+          ],
+          [
+            24.757454099999997,
+            59.44528779999999
+          ],
+          [
+            24.757408999999996,
+            59.445328299999986
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 694230386,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 1.109,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.416,
+        "counts": "{\"good\": 10}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7487737,
+            59.44522829999998
+          ],
+          [
+            24.7490121,
+            59.44525369999999
+          ],
+          [
+            24.7490792,
+            59.44524759999999
+          ],
+          [
+            24.749638399999995,
+            59.4451249
+          ],
+          [
+            24.7496594,
+            59.445083199999985
+          ],
+          [
+            24.749653308614864,
+            59.445076433834856
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 714786829,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.103,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.726,
+        "counts": "{\"good\": 2, \"intermediate\": 2}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              24.761123266248468,
+              59.44660684585417
+            ],
+            [
+              24.761025399999998,
+              59.44656750000001
+            ],
+            [
+              24.76096143482692,
+              59.4465426534298
+            ]
+          ],
+          [
+            [
+              24.760948775916674,
+              59.44653773621274
+            ],
+            [
+              24.76085501122081,
+              59.446501314306346
+            ]
+          ],
+          [
+            [
+              24.76008434536532,
+              59.44626886017307
+            ],
+            [
+              24.7590652,
+              59.44613249999999
+            ],
+            [
+              24.758275099999995,
+              59.446026799999984
+            ],
+            [
+              24.758036499999996,
+              59.44599879999999
+            ],
+            [
+              24.7579212,
+              59.44598349999999
+            ],
+            [
+              24.757870201495496,
+              59.44597677009255
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 727035352,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "",
+        "coverage_pct": 0.03,
+        "agree_pct": 0.5,
+        "bad_run_m": 4.4,
+        "confidence_wheelchair": 0.4,
+        "counts": "{\"excellent\": 1, \"very_bad\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.754219872733376,
+            59.44387428264572
+          ],
+          [
+            24.7541371,
+            59.444587699999985
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 764166333,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "intermediate",
+        "coverage_pct": 2.9,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.256,
+        "counts": "{\"good\": 35, \"intermediate\": 13, \"excellent\": 162}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.754516362014225,
+            59.44294077496655
+          ],
+          [
+            24.754503499999995,
+            59.4429395
+          ],
+          [
+            24.7543253,
+            59.4429293
+          ],
+          [
+            24.754165721860748,
+            59.44291724473115
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 766893815,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 1.886,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.285,
+        "counts": "{\"excellent\": 29, \"good\": 16}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7571535,
+            59.44310219999999
+          ],
+          [
+            24.757165199999996,
+            59.44313779999999
+          ],
+          [
+            24.7571991255737,
+            59.443172184923306
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 766893816,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "good",
+        "coverage_pct": 0.0,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.4,
+        "counts": "{\"good\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.757408999999996,
+            59.445328299999986
+          ],
+          [
+            24.757308969608655,
+            59.445395017273874
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 766893817,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.26,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.664,
+        "counts": "{\"excellent\": 2}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.757184199999998,
+            59.442878199999996
+          ],
+          [
+            24.7574608,
+            59.442947100000005
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 767680830,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 3.918,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.366,
+        "counts": "{\"good\": 11}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              24.7544443,
+              59.44508870000001
+            ],
+            [
+              24.754457299999995,
+              59.445015799999986
+            ],
+            [
+              24.754460399999996,
+              59.444996899999985
+            ],
+            [
+              24.7544678,
+              59.44495099999999
+            ],
+            [
+              24.754470279989068,
+              59.44493554776427
+            ]
+          ],
+          [
+            [
+              24.754597345179675,
+              59.44397470244851
+            ],
+            [
+              24.754604299999997,
+              59.443880899999996
+            ],
+            [
+              24.754609799999997,
+              59.4438714
+            ],
+            [
+              24.7546386,
+              59.44382209999999
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 770499969,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.0,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.4,
+        "counts": "{\"good\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.744327765781595,
+            59.44467588602301
+          ],
+          [
+            24.7443181,
+            59.44465559999999
+          ],
+          [
+            24.7442894,
+            59.4445953
+          ],
+          [
+            24.7442665,
+            59.444548099999984
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 792943324,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.28,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.4,
+        "counts": "{\"good\": 2}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.75823392481113,
+            59.442870703475016
+          ],
+          [
+            24.7576865,
+            59.44276690000001
+          ],
+          [
+            24.757650599999998,
+            59.44271719999998
+          ],
+          [
+            24.7576987213134,
+            59.44264835049066
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 835799856,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "good",
+        "coverage_pct": 2.017,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.63,
+        "counts": "{\"good\": 16, \"excellent\": 2}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.757108913340986,
+            59.44314393637424
+          ],
+          [
+            24.7570981,
+            59.443126599999985
+          ],
+          [
+            24.757090399999996,
+            59.44310209999999
+          ],
+          [
+            24.7570839,
+            59.443081599999985
+          ],
+          [
+            24.7570521,
+            59.4430645
+          ],
+          [
+            24.757003600000004,
+            59.443053699999986
+          ],
+          [
+            24.756926599999996,
+            59.443032800000005
+          ],
+          [
+            24.756872899999998,
+            59.44300020000001
+          ],
+          [
+            24.756869399999996,
+            59.44297650000001
+          ],
+          [
+            24.756887999999996,
+            59.44292719999997
+          ],
+          [
+            24.756952544768605,
+            59.44283962471039
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 858682903,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "good",
+        "coverage_pct": 0.472,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.375,
+        "counts": "{\"excellent\": 3, \"good\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.75323968712901,
+            59.44341560627821
+          ],
+          [
+            24.753286699999997,
+            59.4434547
+          ],
+          [
+            24.7533366,
+            59.443485999999986
+          ],
+          [
+            24.7534519,
+            59.44353729999999
+          ],
+          [
+            24.753555,
+            59.44356049999999
+          ],
+          [
+            24.75387797389585,
+            59.443619337738625
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 908243359,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.0,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.7,
+        "counts": "{\"good\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              24.7541371,
+              59.444587699999985
+            ],
+            [
+              24.753483199999998,
+              59.444565099999984
+            ],
+            [
+              24.753531297509273,
+              59.44432179282164
+            ]
+          ],
+          [
+            [
+              24.753610150370655,
+              59.44392290211761
+            ],
+            [
+              24.7536264,
+              59.443840699999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 957564319,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "intermediate",
+        "coverage_pct": 2.174,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.65,
+        "counts": "{\"good\": 1, \"intermediate\": 33}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.761086299999995,
+            59.4467122
+          ],
+          [
+            24.7611045,
+            59.446802199999986
+          ],
+          [
+            24.761302999999998,
+            59.44688479999998
+          ],
+          [
+            24.761199294180617,
+            59.44694770489159
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 966798815,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 2.617,
+        "agree_pct": 0.872,
+        "bad_run_m": 10.0,
+        "confidence_wheelchair": 0.759,
+        "counts": "{\"intermediate\": 16, \"good\": 4, \"excellent\": 14, \"very_bad\": 5}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.761302999999998,
+            59.44688479999998
+          ],
+          [
+            24.761561499999996,
+            59.44698060000001
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 966798821,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 1.927,
+        "agree_pct": 0.833,
+        "bad_run_m": 4.7,
+        "confidence_wheelchair": 0.595,
+        "counts": "{\"very_bad\": 2, \"good\": 2, \"excellent\": 8}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.751646626245023,
+            59.44456809625464
+          ],
+          [
+            24.7516117,
+            59.444813299999986
+          ],
+          [
+            24.7516089,
+            59.44483290000001
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 981615963,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.491,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.434,
+        "counts": "{\"good\": 5}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.751684499999996,
+            59.44483379999999
+          ],
+          [
+            24.751651399999997,
+            59.444833899999985
+          ],
+          [
+            24.7516089,
+            59.44483290000001
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 981615964,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "intermediate",
+        "coverage_pct": 0.0,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.7,
+        "counts": "{\"good\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.747752986721324,
+            59.444317838491195
+          ],
+          [
+            24.747724,
+            59.4442388
+          ],
+          [
+            24.7478496,
+            59.44423269999999
+          ],
+          [
+            24.7479674,
+            59.44424329999998
+          ],
+          [
+            24.7480362,
+            59.44426459999998
+          ],
+          [
+            24.748257899999995,
+            59.44432139999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1003179661,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 0.688,
+        "agree_pct": 0.25,
+        "bad_run_m": 24.9,
+        "confidence_wheelchair": 0.468,
+        "counts": "{\"intermediate\": 2, \"very_bad\": 6}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.761673859033376,
+            59.446990029589436
+          ],
+          [
+            24.761561499999996,
+            59.44698060000001
+          ],
+          [
+            24.76165575576586,
+            59.44692049418787
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1044490754,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.2,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.729,
+        "counts": "{\"good\": 7, \"excellent\": 2}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              24.750415899999997,
+              59.44499069999999
+            ],
+            [
+              24.750420000000002,
+              59.4450481
+            ],
+            [
+              24.75039905735125,
+              59.44508554399267
+            ]
+          ],
+          [
+            [
+              24.749679279314567,
+              59.445250580735305
+            ],
+            [
+              24.7496075,
+              59.44525749999998
+            ],
+            [
+              24.749522799999998,
+              59.4451936
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1082479246,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "bad",
+        "existing_smoothness": "",
+        "coverage_pct": 2.335,
+        "agree_pct": 0.5,
+        "bad_run_m": 54.7,
+        "confidence_wheelchair": 0.4,
+        "counts": "{\"intermediate\": 1, \"very_bad\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.75160579343623,
+            59.44456257104698
+          ],
+          [
+            24.7515948,
+            59.4445679
+          ],
+          [
+            24.750981199999995,
+            59.44486559999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1117830428,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 1.555,
+        "agree_pct": 0.97,
+        "bad_run_m": 15.3,
+        "confidence_wheelchair": 0.181,
+        "counts": "{\"very_bad\": 12, \"intermediate\": 2, \"good\": 1, \"excellent\": 379}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.752773426749773,
+            59.44381395562733
+          ],
+          [
+            24.752974199999997,
+            59.443817800000005
+          ],
+          [
+            24.753175999999996,
+            59.443818699999994
+          ],
+          [
+            24.75321,
+            59.44381749999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1132766900,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.785,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.325,
+        "counts": "{\"intermediate\": 11, \"good\": 4, \"excellent\": 26}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.753175999999996,
+            59.443818699999994
+          ],
+          [
+            24.753179599999996,
+            59.44386429999999
+          ],
+          [
+            24.753175098989843,
+            59.443903878427555
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1206344869,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 0.0,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.361,
+        "counts": "{\"intermediate\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.748257899999995,
+            59.44432139999999
+          ],
+          [
+            24.7480801,
+            59.44441099999999
+          ],
+          [
+            24.748137699999997,
+            59.444522199999994
+          ],
+          [
+            24.748268499999995,
+            59.44466839999999
+          ],
+          [
+            24.748389599999996,
+            59.44479569999999
+          ],
+          [
+            24.748487099999995,
+            59.44489819999999
+          ],
+          [
+            24.7486232,
+            59.44505259999998
+          ],
+          [
+            24.748686300000003,
+            59.44512209999999
+          ],
+          [
+            24.7487198,
+            59.445180399999984
+          ],
+          [
+            24.7487245,
+            59.44523029999999
+          ],
+          [
+            24.748727199999998,
+            59.44524759999999
+          ],
+          [
+            24.748727199999998,
+            59.445284099999995
+          ],
+          [
+            24.748740899999998,
+            59.445308199999985
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1246258857,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "good",
+        "coverage_pct": 0.816,
+        "agree_pct": 0.333,
+        "bad_run_m": 57.7,
+        "confidence_wheelchair": 0.378,
+        "counts": "{\"very_bad\": 13, \"intermediate\": 7, \"bad\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.751742200000002,
+            59.444836299999984
+          ],
+          [
+            24.751684499999996,
+            59.44483379999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1315709241,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "good",
+        "coverage_pct": 0.0,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.225,
+        "counts": "{\"good\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              24.7535983,
+              59.443509799999994
+            ],
+            [
+              24.753742178545828,
+              59.443443727357916
+            ]
+          ],
+          [
+            [
+              24.753938111386052,
+              59.44318766918079
+            ],
+            [
+              24.7540711,
+              59.442972799999986
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1315755788,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 1.683,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.549,
+        "counts": "{\"good\": 20, \"excellent\": 40}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7548177,
+            59.44249949999999
+          ],
+          [
+            24.7566449,
+            59.442845599999984
+          ],
+          [
+            24.756785699999995,
+            59.442873899999995
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1315755789,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 1.596,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.323,
+        "counts": "{\"excellent\": 60, \"good\": 45, \"intermediate\": 10}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7548177,
+            59.44249949999999
+          ],
+          [
+            24.754467399999996,
+            59.4424355
+          ],
+          [
+            24.75451617301706,
+            59.44236763518801
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1315763574,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 4.853,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.269,
+        "counts": "{\"excellent\": 96, \"good\": 30}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.757184199999998,
+            59.442878199999996
+          ],
+          [
+            24.757154299999996,
+            59.44294459999999
+          ],
+          [
+            24.757143799999998,
+            59.4429928
+          ],
+          [
+            24.757142299999998,
+            59.443035099999996
+          ],
+          [
+            24.7571465,
+            59.4430739
+          ],
+          [
+            24.7571535,
+            59.44310219999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1339690843,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 1.369,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.366,
+        "counts": "{\"excellent\": 1, \"good\": 4}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              24.757184199999998,
+              59.442878199999996
+            ],
+            [
+              24.757169085884257,
+              59.44287530398522
+            ]
+          ],
+          [
+            [
+              24.756948876553263,
+              59.442837945156555
+            ],
+            [
+              24.756851299999997,
+              59.44282349999999
+            ],
+            [
+              24.756785699999995,
+              59.442873899999995
+            ],
+            [
+              24.75669434019457,
+              59.44294409000456
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1339692843,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 0.049,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.377,
+        "counts": "{\"excellent\": 2}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7570439733792,
+            59.44288148680408
+          ],
+          [
+            24.7569782,
+            59.442977199999994
+          ],
+          [
+            24.756926599999996,
+            59.443032800000005
+          ],
+          [
+            24.756913859302276,
+            59.44304317254341
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1347091492,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 0.0,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.4,
+        "counts": "{\"excellent\": 1}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7582565575407,
+            59.444336302909605
+          ],
+          [
+            24.758236999999998,
+            59.444370499999984
+          ],
+          [
+            24.758271399999998,
+            59.444391799999984
+          ],
+          [
+            24.758288599999997,
+            59.44441039999999
+          ],
+          [
+            24.758295699999998,
+            59.44442849999999
+          ],
+          [
+            24.758294699999997,
+            59.444436399999994
+          ],
+          [
+            24.7582185,
+            59.444609799999995
+          ],
+          [
+            24.758125999999997,
+            59.44482529999999
+          ],
+          [
+            24.7580793,
+            59.44491159999998
+          ],
+          [
+            24.758052199999998,
+            59.4449557
+          ],
+          [
+            24.758034499999997,
+            59.44497049999999
+          ],
+          [
+            24.7579664,
+            59.44500339999998
+          ],
+          [
+            24.7579024,
+            59.44503139999999
+          ],
+          [
+            24.757819099999995,
+            59.44505679999999
+          ],
+          [
+            24.757735799999995,
+            59.44506829999999
+          ],
+          [
+            24.757604099999995,
+            59.44507829999999
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1347091496,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.69,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.219,
+        "counts": "{\"good\": 11, \"excellent\": 122}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.751564099999996,
+            59.444812799999994
+          ],
+          [
+            24.7515948,
+            59.4445679
+          ],
+          [
+            24.751595699519736,
+            59.444561980588226
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1347091498,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "excellent",
+        "coverage_pct": 0.265,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.593,
+        "counts": "{\"excellent\": 1, \"good\": 2}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.753253899999997,
+            59.444951399999994
+          ],
+          [
+            24.752768499999995,
+            59.44493430000001
+          ],
+          [
+            24.7525863,
+            59.444925299999994
+          ],
+          [
+            24.752486799999996,
+            59.444917800000006
+          ],
+          [
+            24.752270899999996,
+            59.44489529999999
+          ],
+          [
+            24.752022800000002,
+            59.444857799999994
+          ],
+          [
+            24.751776,
+            59.44482299999999
+          ],
+          [
+            24.751717,
+            59.44481749999999
+          ],
+          [
+            24.7516869,
+            59.444816899999985
+          ],
+          [
+            24.7516117,
+            59.444813299999986
+          ],
+          [
+            24.751564099999996,
+            59.444812799999994
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1347091500,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.017,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.659,
+        "counts": "{\"good\": 2}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.753393599999995,
+            59.443446999999985
+          ],
+          [
+            24.753423199999997,
+            59.443473699999984
+          ],
+          [
+            24.753471,
+            59.443495599999984
+          ],
+          [
+            24.7535527,
+            59.44351399999999
+          ],
+          [
+            24.7539474,
+            59.44356649999999
+          ],
+          [
+            24.753993501980517,
+            59.4435740171453
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1347091502,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "intermediate",
+        "existing_smoothness": "",
+        "coverage_pct": 0.687,
+        "agree_pct": 1.0,
+        "bad_run_m": 0.0,
+        "confidence_wheelchair": 0.24,
+        "counts": "{\"good\": 15, \"excellent\": 38}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.7611045,
+            59.446802199999986
+          ],
+          [
+            24.7610564,
+            59.446850199999986
+          ],
+          [
+            24.7609903,
+            59.44685429999999
+          ],
+          [
+            24.7609131,
+            59.446885299999984
+          ],
+          [
+            24.7608308,
+            59.44691069999998
+          ],
+          [
+            24.7607911,
+            59.44695249999999
+          ],
+          [
+            24.760721,
+            59.447011899999985
+          ],
+          [
+            24.7606082,
+            59.447075999999996
+          ],
+          [
+            24.7605126,
+            59.447157099999984
+          ],
+          [
+            24.760389699999998,
+            59.447262
+          ],
+          [
+            24.760362695272963,
+            59.447288275419346
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1435514231,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "bad",
+        "existing_smoothness": "",
+        "coverage_pct": 1.928,
+        "agree_pct": 0.526,
+        "bad_run_m": 39.8,
+        "confidence_wheelchair": 0.55,
+        "counts": "{\"excellent\": 29, \"good\": 10, \"intermediate\": 2, \"very_bad\": 37}"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.743381993966555,
+            59.444765228608844
+          ],
+          [
+            24.743394599999995,
+            59.444762100000005
+          ],
+          [
+            24.743523099999997,
+            59.44473319999999
+          ],
+          [
+            24.743763799999996,
+            59.444678999999994
+          ],
+          [
+            24.744062,
+            59.44462219999998
+          ],
+          [
+            24.7442894,
+            59.4445953
+          ],
+          [
+            24.744371699999995,
+            59.4445856
+          ],
+          [
+            24.744536699999998,
+            59.444568999999994
+          ],
+          [
+            24.7465111,
+            59.44435179999999
+          ],
+          [
+            24.7476523,
+            59.444225899999985
+          ],
+          [
+            24.7476874,
+            59.444225700000004
+          ],
+          [
+            24.747724,
+            59.4442388
+          ]
+        ]
+      },
+      "properties": {
+        "way_id": 1470410176,
+        "source_file": "258276934-579126.json",
+        "path_id": null,
+        "proposed_value": "",
+        "existing_smoothness": "good",
+        "coverage_pct": 1.666,
+        "agree_pct": 0.621,
+        "bad_run_m": 212.8,
+        "confidence_wheelchair": 0.477,
+        "counts": "{\"excellent\": 17, \"good\": 5, \"intermediate\": 14, \"very_bad\": 22}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "generated_at": "2026-04-15T13:39:12.220459+00:00",
+  "bbox_name": "tallinn-center",
+  "bbox": [
+    59.422,
+    24.73,
+    59.452,
+    24.76
+  ],
+  "rides": [
+    {
+      "ride_id": "257672714",
+      "path_id": "353238",
+      "file": "telemetry_json/257672714-353238.json",
+      "total_gps_points": 3643,
+      "points_in_bbox": 3597,
+      "first_gps": [
+        59.44478,
+        24.74379
+      ],
+      "last_gps": [
+        59.42742,
+        24.748539
+      ],
+      "status": "skipped-cached",
+      "csv": "output/smoothness_proposals_257672714.csv",
+      "html": "output/smoothness_proposals_257672714.html",
+      "raw_html": "output/raw_map_257672714.html",
+      "rows": 116,
+      "proposed": 27,
+      "new": 27,
+      "override": 0
+    },
+    {
+      "ride_id": "257662320",
+      "path_id": "579126",
+      "file": "telemetry_json/257662320-579126.json",
+      "total_gps_points": 3605,
+      "points_in_bbox": 3410,
+      "first_gps": [
+        59.444843,
+        24.74351
+      ],
+      "last_gps": [
+        59.44309,
+        24.757225
+      ],
+      "status": "skipped-cached",
+      "csv": "output/smoothness_proposals_257662320.csv",
+      "html": "output/smoothness_proposals_257662320.html",
+      "raw_html": "output/raw_map_257662320.html",
+      "rows": 70,
+      "proposed": 35,
+      "new": 35,
+      "override": 0
+    },
+    {
+      "ride_id": "258276934",
+      "path_id": "579126",
+      "file": "telemetry_json/258276934-579126.json",
+      "total_gps_points": 3605,
+      "points_in_bbox": 3410,
+      "first_gps": [
+        59.444843,
+        24.74351
+      ],
+      "last_gps": [
+        59.44309,
+        24.757225
+      ],
+      "status": "skipped-cached",
+      "csv": "output/smoothness_proposals_258276934.csv",
+      "html": "output/smoothness_proposals_258276934.html",
+      "raw_html": "output/raw_map_258276934.html",
+      "rows": 74,
+      "proposed": 37,
+      "new": 37,
+      "override": 0
+    },
+    {
+      "ride_id": "257814809",
+      "path_id": "353238",
+      "file": "telemetry_json/257814809-353238.json",
+      "total_gps_points": 3274,
+      "points_in_bbox": 3274,
+      "first_gps": [
+        59.444607,
+        24.743113
+      ],
+      "last_gps": [
+        59.42737,
+        24.741463
+      ],
+      "status": "ok",
+      "duration_s": 49.6,
+      "csv": "output/smoothness_proposals_257814809.csv",
+      "html": "output/smoothness_proposals_257814809.html",
+      "raw_html": "output/raw_map_257814809.html",
+      "rows": 119,
+      "proposed": 38,
+      "new": 38,
+      "override": 0
+    },
+    {
+      "ride_id": "258232037",
+      "path_id": "353238",
+      "file": "telemetry_json/258232037-353238.json",
+      "total_gps_points": 3277,
+      "points_in_bbox": 3202,
+      "first_gps": [
+        59.44479,
+        24.743656
+      ],
+      "last_gps": [
+        59.43594,
+        24.72684
+      ],
+      "status": "ok",
+      "duration_s": 26.4,
+      "csv": "output/smoothness_proposals_258232037.csv",
+      "html": "output/smoothness_proposals_258232037.html",
+      "raw_html": "output/raw_map_258232037.html",
+      "rows": 91,
+      "proposed": 28,
+      "new": 28,
+      "override": 0
+    },
+    {
+      "ride_id": "258576077",
+      "path_id": "595448",
+      "file": "telemetry_json/258576077-595448.json",
+      "total_gps_points": 2899,
+      "points_in_bbox": 2850,
+      "first_gps": [
+        59.45048,
+        24.72887
+      ],
+      "last_gps": [
+        59.444695,
+        24.743631
+      ],
+      "status": "ok",
+      "duration_s": 29.0,
+      "csv": "output/smoothness_proposals_258576077.csv",
+      "html": "output/smoothness_proposals_258576077.html",
+      "raw_html": "output/raw_map_258576077.html",
+      "rows": 93,
+      "proposed": 36,
+      "new": 36,
+      "override": 0
+    },
+    {
+      "ride_id": "257673408",
+      "path_id": "530155",
+      "file": "telemetry_json/257673408-530155.json",
+      "total_gps_points": 3147,
+      "points_in_bbox": 2739,
+      "first_gps": [
+        59.444855,
+        24.74354
+      ],
+      "last_gps": [
+        59.436977,
+        24.756756
+      ],
+      "status": "ok",
+      "duration_s": 24.4,
+      "csv": "output/smoothness_proposals_257673408.csv",
+      "html": "output/smoothness_proposals_257673408.html",
+      "raw_html": "output/raw_map_257673408.html",
+      "rows": 236,
+      "proposed": 70,
+      "new": 70,
+      "override": 0
+    },
+    {
+      "ride_id": "258411351",
+      "path_id": "570318",
+      "file": "telemetry_json/258411351-570318.json",
+      "total_gps_points": 2748,
+      "points_in_bbox": 2716,
+      "first_gps": [
+        59.44489,
+        24.728767
+      ],
+      "last_gps": [
+        59.442314,
+        24.751375
+      ],
+      "status": "failed",
+      "returncode": 1,
+      "stderr_tail": [
+        "Traceback (most recent call last):",
+        "  File \"/Users/pavel/dev/serviceplan/wheels4wheels/scripts/OSM/OSM_smoothness_workflow.py\", line 322, in <module>",
+        "    assert ways, 'No ways returned from Overpass'",
+        "           ^^^^",
+        "AssertionError: No ways returned from Overpass"
+      ],
+      "duration_s": 126.5,
+      "csv": null,
+      "html": null,
+      "rows": 0,
+      "proposed": 0,
+      "new": 0,
+      "override": 0
+    },
+    {
+      "ride_id": "257699018",
+      "path_id": "579126",
+      "file": "telemetry_json/257699018-579126.json",
+      "total_gps_points": 3601,
+      "points_in_bbox": 2687,
+      "first_gps": [
+        59.441845,
+        24.773079
+      ],
+      "last_gps": [
+        59.44409,
+        24.751522
+      ],
+      "status": "ok",
+      "duration_s": 32.2,
+      "csv": "output/smoothness_proposals_257699018.csv",
+      "html": "output/smoothness_proposals_257699018.html",
+      "raw_html": "output/raw_map_257699018.html",
+      "rows": 144,
+      "proposed": 58,
+      "new": 58,
+      "override": 0
+    },
+    {
+      "ride_id": "258517445",
+      "path_id": "532019",
+      "file": "telemetry_json/258517445-532019.json",
+      "total_gps_points": 3399,
+      "points_in_bbox": 2106,
+      "first_gps": [
+        59.444912,
+        24.743774
+      ],
+      "last_gps": [
+        59.43296,
+        24.717558
+      ],
+      "status": "ok",
+      "duration_s": 35.6,
+      "csv": "output/smoothness_proposals_258517445.csv",
+      "html": "output/smoothness_proposals_258517445.html",
+      "raw_html": "output/raw_map_258517445.html",
+      "rows": 65,
+      "proposed": 31,
+      "new": 31,
+      "override": 0
+    }
+  ]
+}

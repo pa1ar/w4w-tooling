@@ -9,7 +9,9 @@ This repo turns e-scooter telemetry into OSM `smoothness=*` review artifacts:
 - GeoJSON for dashboard/demo use
 - optional OSM upload manifests and edit commands
 
-The dashboard and public website live outside this repo.
+The review dashboard lives in `dashboard/`. It can run locally against generated
+`output/` data, or as a Vercel demo against committed `dashboard/demo-output/output`
+artifacts with OSM mutations disabled.
 
 ## Setup
 
@@ -52,6 +54,28 @@ uv run python scripts/OSM/osm_edit.py set-tag \
 ```
 
 Tokens are stored in `.osm_token.json`, which is gitignored.
+
+## Dashboard Demo
+
+```bash
+cd dashboard
+pnpm install
+pnpm dev:demo
+```
+
+For Vercel, deploy `dashboard/` as the project root and set:
+
+```bash
+MAPBOX_ACCESS_TOKEN=...
+NEXT_PUBLIC_W4W_DEMO_MODE=1
+W4W_DASHBOARD_MODE=demo
+```
+
+Optional:
+
+```bash
+NEXT_PUBLIC_W4W_TOOLING_REPO_URL=https://github.com/<org>/w4w-tooling
+```
 
 ## Data Policy
 

@@ -1,0 +1,209 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ====== w4w design tokens (mirrored from ../w4w/src/app/tokens.css) ====== */
+:root {
+  /* greenscale (raw) */
+  --w4w-greenscale-0: #FFFFFF;
+  --w4w-greenscale-50: #EAFFF5;
+  --w4w-greenscale-100: #D1EBDE;
+  --w4w-greenscale-200: #91AA9D;
+  --w4w-greenscale-300: #5B6F65;
+  --w4w-greenscale-400: #44544C;
+  --w4w-greenscale-500: #33413A;
+  --w4w-greenscale-600: #26332D;
+  --w4w-greenscale-700: #1D2622;
+  --w4w-greenscale-800: #131B17;
+  --w4w-greenscale-900: #0B1410;
+
+  /* pavement palette (smoothness surface colors from w4w) */
+  --w4w-pavement-excellent: #2A9C64;
+  --w4w-pavement-good: #8ECE90;
+  --w4w-pavement-intermediate: #F1FFBC;
+  --w4w-pavement-bad: #F8D1DC;
+  --w4w-pavement-very-bad: #FFA2FB;
+
+  /* primary accent (w4w brand green) */
+  --w4w-primary: #2A9C64;
+  --w4w-primary-hover: #2B8659;
+
+  /* cloudy whites (hairline borders) */
+  --w4w-cloudy-10: rgba(255, 255, 255, 0.1);
+  --w4w-cloudy-12: rgba(255, 255, 255, 0.12);
+  --w4w-cloudy-20: rgba(255, 255, 255, 0.2);
+  --w4w-cloudy-50: rgba(255, 255, 255, 0.5);
+
+  /* hover defaults (mirror of w4w-hover-*) */
+  --w4w-hover-duration: 300ms;
+  --w4w-hover-easing: cubic-bezier(0.22, 1, 0.36, 1);
+  --w4w-hover-surface-bg: var(--w4w-greenscale-600);
+}
+
+/* ====== shadcn token bridge -> w4w tokens (dark-only dashboard) ====== */
+:root {
+  --background: var(--w4w-greenscale-900);
+  --foreground: var(--w4w-greenscale-50);
+  --card: var(--w4w-greenscale-700);
+  --card-foreground: var(--w4w-greenscale-50);
+  --popover: var(--w4w-greenscale-700);
+  --popover-foreground: var(--w4w-greenscale-50);
+  --primary: var(--w4w-primary);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--w4w-greenscale-800);
+  --secondary-foreground: var(--w4w-greenscale-50);
+  --muted: var(--w4w-greenscale-700);
+  --muted-foreground: var(--w4w-greenscale-200);
+  --accent: var(--w4w-primary);
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF7120;
+  --border: var(--w4w-cloudy-12);
+  --input: var(--w4w-cloudy-20);
+  --ring: var(--w4w-primary);
+
+  --chart-1: var(--w4w-pavement-excellent);
+  --chart-2: var(--w4w-pavement-good);
+  --chart-3: var(--w4w-pavement-intermediate);
+  --chart-4: var(--w4w-pavement-bad);
+  --chart-5: var(--w4w-pavement-very-bad);
+
+  --sidebar: var(--w4w-greenscale-800);
+  --sidebar-foreground: var(--w4w-greenscale-50);
+  --sidebar-primary: var(--w4w-primary);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: var(--w4w-greenscale-700);
+  --sidebar-accent-foreground: var(--w4w-greenscale-50);
+  --sidebar-border: var(--w4w-cloudy-10);
+  --sidebar-ring: var(--w4w-primary);
+
+  --radius: 0.625rem; /* 10px - w4w card radius */
+
+  /* semantic smoothness scale mapped to pavement palette */
+  --smooth-excellent: var(--w4w-pavement-excellent);
+  --smooth-good: var(--w4w-pavement-good);
+  --smooth-intermediate: var(--w4w-pavement-intermediate);
+  --smooth-bad: var(--w4w-pavement-bad);
+  --smooth-very-bad: var(--w4w-pavement-very-bad);
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-smooth-excellent: var(--smooth-excellent);
+  --color-smooth-good: var(--smooth-good);
+  --color-smooth-intermediate: var(--smooth-intermediate);
+  --color-smooth-bad: var(--smooth-bad);
+  --color-smooth-very-bad: var(--smooth-very-bad);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* slim green-tinted scrollbars (mirrors w4w) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--w4w-greenscale-500) transparent;
+}
+*::-webkit-scrollbar { width: 6px; height: 6px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: var(--w4w-greenscale-500);
+  border-radius: 3px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--w4w-greenscale-300);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01" on, "cv11" on;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  /* echoes w4w-type-tag / w4w-type-descriptions - mono micro labels */
+  .micro-label {
+    font-family: var(--font-mono);
+    @apply text-[11px] font-normal tracking-[0.02em] text-[color:var(--w4w-greenscale-300)] uppercase;
+  }
+  .mono-num {
+    @apply font-mono tabular-nums;
+  }
+  /* w4w card treatment: 1px white/20% border, 10px radius */
+  .w4w-card {
+    @apply bg-[color:var(--w4w-greenscale-700)] rounded-[10px];
+    border: 1px solid var(--w4w-cloudy-20);
+  }
+  .w4w-card-subtle {
+    @apply bg-[color:var(--w4w-greenscale-800)] rounded-[10px];
+    border: 1px solid var(--w4w-cloudy-10);
+  }
+  /* shared hover transition (mirrors w4w-hover-transition) */
+  .w4w-hover-transition {
+    transition-property: background-color, border-color, color;
+    transition-duration: var(--w4w-hover-duration);
+    transition-timing-function: var(--w4w-hover-easing);
+  }
+  .w4w-hover-surface {
+    transition-property: background-color, border-color, color;
+    transition-duration: var(--w4w-hover-duration);
+    transition-timing-function: var(--w4w-hover-easing);
+  }
+  .w4w-hover-surface:hover {
+    background-color: var(--w4w-hover-surface-bg);
+  }
+}
+
+/* shadcn Card: match w4w spec (1px 20% white border, 10px radius) */
+[data-slot="card"] {
+  border: 1px solid var(--w4w-cloudy-20) !important;
+  border-radius: 10px !important;
+  background-color: var(--w4w-greenscale-700);
+}

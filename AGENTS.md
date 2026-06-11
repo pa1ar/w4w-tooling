@@ -35,6 +35,7 @@ uv run python scripts/OSM/osm_edit.py set-tag --way-id 123 --key smoothness --va
 - OSM OAuth env only needed for `osm_edit.py`
 - Generated output in `output/`
 - Raw telemetry in `telemetry_json/`
+- Dashboard demo app in `dashboard/`; Vercel demo reads `dashboard/demo-output/output`
 
 ## Data Safety
 
@@ -57,6 +58,7 @@ uv run python scripts/OSM/osm_edit.py set-tag --way-id 123 --key smoothness --va
 
 ```text
 scripts/OSM/       pipeline + OSM CLIs
+dashboard/         Next.js review dashboard + committed demo artifacts
 example_data/      committed sample ride
 telemetry_json/    local raw telemetry, gitignored
 output/            generated artifacts, gitignored

@@ -1,0 +1,165 @@
+{
+  "bbox_name": "tallinn-center",
+  "bbox": [
+    59.422,
+    24.73,
+    59.452,
+    24.76
+  ],
+  "min_points": 50,
+  "top_n": 10,
+  "candidates_scanned": 175,
+  "qualified": 72,
+  "selected": [
+    {
+      "ride_id": "257672714",
+      "path_id": "353238",
+      "file": "telemetry_json/257672714-353238.json",
+      "total_gps_points": 3643,
+      "points_in_bbox": 3597,
+      "first_gps": [
+        59.44478,
+        24.74379
+      ],
+      "last_gps": [
+        59.42742,
+        24.748539
+      ]
+    },
+    {
+      "ride_id": "257662320",
+      "path_id": "579126",
+      "file": "telemetry_json/257662320-579126.json",
+      "total_gps_points": 3605,
+      "points_in_bbox": 3410,
+      "first_gps": [
+        59.444843,
+        24.74351
+      ],
+      "last_gps": [
+        59.44309,
+        24.757225
+      ]
+    },
+    {
+      "ride_id": "258276934",
+      "path_id": "579126",
+      "file": "telemetry_json/258276934-579126.json",
+      "total_gps_points": 3605,
+      "points_in_bbox": 3410,
+      "first_gps": [
+        59.444843,
+        24.74351
+      ],
+      "last_gps": [
+        59.44309,
+        24.757225
+      ]
+    },
+    {
+      "ride_id": "257814809",
+      "path_id": "353238",
+      "file": "telemetry_json/257814809-353238.json",
+      "total_gps_points": 3274,
+      "points_in_bbox": 3274,
+      "first_gps": [
+        59.444607,
+        24.743113
+      ],
+      "last_gps": [
+        59.42737,
+        24.741463
+      ]
+    },
+    {
+      "ride_id": "258232037",
+      "path_id": "353238",
+      "file": "telemetry_json/258232037-353238.json",
+      "total_gps_points": 3277,
+      "points_in_bbox": 3202,
+      "first_gps": [
+        59.44479,
+        24.743656
+      ],
+      "last_gps": [
+        59.43594,
+        24.72684
+      ]
+    },
+    {
+      "ride_id": "258576077",
+      "path_id": "595448",
+      "file": "telemetry_json/258576077-595448.json",
+      "total_gps_points": 2899,
+      "points_in_bbox": 2850,
+      "first_gps": [
+        59.45048,
+        24.72887
+      ],
+      "last_gps": [
+        59.444695,
+        24.743631
+      ]
+    },
+    {
+      "ride_id": "257673408",
+      "path_id": "530155",
+      "file": "telemetry_json/257673408-530155.json",
+      "total_gps_points": 3147,
+      "points_in_bbox": 2739,
+      "first_gps": [
+        59.444855,
+        24.74354
+      ],
+      "last_gps": [
+        59.436977,
+        24.756756
+      ]
+    },
+    {
+      "ride_id": "258411351",
+      "path_id": "570318",
+      "file": "telemetry_json/258411351-570318.json",
+      "total_gps_points": 2748,
+      "points_in_bbox": 2716,
+      "first_gps": [
+        59.44489,
+        24.728767
+      ],
+      "last_gps": [
+        59.442314,
+        24.751375
+      ]
+    },
+    {
+      "ride_id": "257699018",
+      "path_id": "579126",
+      "file": "telemetry_json/257699018-579126.json",
+      "total_gps_points": 3601,
+      "points_in_bbox": 2687,
+      "first_gps": [
+        59.441845,
+        24.773079
+      ],
+      "last_gps": [
+        59.44409,
+        24.751522
+      ]
+    },
+    {
+      "ride_id": "258517445",
+      "path_id": "532019",
+      "file": "telemetry_json/258517445-532019.json",
+      "total_gps_points": 3399,
+      "points_in_bbox": 2106,
+      "first_gps": [
+        59.444912,
+        24.743774
+      ],
+      "last_gps": [
+        59.43296,
+        24.717558
+      ]
+    }
+  ]
+}

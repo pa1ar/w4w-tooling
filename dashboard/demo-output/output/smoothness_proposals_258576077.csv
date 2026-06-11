@@ -1,0 +1,94 @@
+way_id,proposed_value,coverage_pct,bad_run_m,agree_pct,existing_smoothness,counts,confidence_wheelchair,predicted_way_class,osm_match,osm_match_pct,comment
+4811710,bad,0.071,34.8,0.0,,"{""very_bad"": 7}",0.461,very_bad,,,[w4w] smoothness from scooter telemetry
+8016860,intermediate,0.565,0.0,1.0,,"{""good"": 1, ""excellent"": 43}",0.75,excellent,,,[w4w] smoothness from scooter telemetry
+14820164,intermediate,1.251,0.0,1.0,,"{""excellent"": 14}",0.515,excellent,,,[w4w] smoothness from scooter telemetry
+14821875,intermediate,0.175,0.0,1.0,,"{""good"": 2}",0.4,good,,,[w4w] smoothness from scooter telemetry
+14821952,intermediate,0.899,0.0,1.0,,"{""good"": 7, ""excellent"": 10}",0.713,excellent,,,[w4w] smoothness from scooter telemetry
+14821967,intermediate,0.0,0.0,1.0,,"{""excellent"": 1}",0.7,excellent,,,[w4w] smoothness from scooter telemetry
+48423000,bad,1.696,70.7,0.75,,"{""intermediate"": 4, ""bad"": 2, ""very_bad"": 10, ""good"": 10, ""excellent"": 22}",0.386,excellent,,,[w4w] smoothness from scooter telemetry
+55454635,intermediate,2.01,0.0,1.0,,"{""excellent"": 118, ""good"": 7}",0.641,excellent,,,[w4w] smoothness from scooter telemetry
+55454650,,0.069,0.0,1.0,good,"{""excellent"": 3}",0.933,excellent,False,0.0,[w4w] smoothness from scooter telemetry
+61311426,intermediate,0.065,0.0,1.0,,"{""excellent"": 2}",0.85,excellent,,,[w4w] smoothness from scooter telemetry
+105616290,,0.904,36.4,0.5,excellent,"{""excellent"": 6, ""good"": 1, ""intermediate"": 1, ""bad"": 2, ""very_bad"": 6}",0.472,excellent,True,0.375,[w4w] smoothness from scooter telemetry
+226633678,,0.0,0.0,0.0,,"{""very_bad"": 1}",0.488,very_bad,,,[w4w] smoothness from scooter telemetry
+226633680,,0.484,0.0,1.0,excellent,"{""excellent"": 32}",0.522,excellent,True,1.0,[w4w] smoothness from scooter telemetry
+294491109,,0.575,274.4,0.0,good,"{""very_bad"": 40}",0.388,very_bad,False,0.0,[w4w] smoothness from scooter telemetry
+409329684,,2.965,28.4,0.95,excellent,"{""very_bad"": 9, ""bad"": 1, ""good"": 5, ""excellent"": 185}",0.531,excellent,True,0.925,[w4w] smoothness from scooter telemetry
+430868715,,1.788,0.0,1.0,excellent,"{""good"": 32, ""excellent"": 32}",0.609,good,False,0.5,[w4w] smoothness from scooter telemetry
+461159131,intermediate,2.144,0.0,1.0,,"{""excellent"": 20, ""good"": 24}",0.473,good,,,[w4w] smoothness from scooter telemetry
+461159132,intermediate,0.023,0.0,1.0,,"{""good"": 2}",0.7,good,,,[w4w] smoothness from scooter telemetry
+624150221,,1.526,18.7,0.417,,"{""very_bad"": 3, ""bad"": 4, ""intermediate"": 2, ""excellent"": 3}",0.615,bad,,,[w4w] smoothness from scooter telemetry
+638498973,intermediate,1.238,0.0,1.0,,"{""excellent"": 81}",0.779,excellent,,,[w4w] smoothness from scooter telemetry
+694230375,,1.462,0.0,1.0,excellent,"{""intermediate"": 1, ""good"": 3, ""excellent"": 12}",0.566,excellent,True,0.75,[w4w] smoothness from scooter telemetry
+704124929,,0.928,2.9,0.389,,"{""very_bad"": 11, ""good"": 3, ""excellent"": 4}",0.484,very_bad,,,[w4w] smoothness from scooter telemetry
+704124935,,1.376,0.0,1.0,excellent,"{""excellent"": 14, ""good"": 2}",0.676,excellent,True,0.875,[w4w] smoothness from scooter telemetry
+767109111,,2.239,0.0,1.0,excellent,"{""excellent"": 80, ""good"": 14}",0.596,excellent,True,0.851,[w4w] smoothness from scooter telemetry
+767109112,,3.097,0.0,1.0,excellent,"{""excellent"": 42, ""good"": 10}",0.516,excellent,True,0.808,[w4w] smoothness from scooter telemetry
+767109113,,0.96,38.1,0.83,good,"{""good"": 3, ""excellent"": 40, ""intermediate"": 1, ""very_bad"": 9}",0.592,excellent,False,0.057,[w4w] smoothness from scooter telemetry
+767109114,,0.0,0.0,1.0,good,"{""excellent"": 1}",0.4,excellent,False,0.0,[w4w] smoothness from scooter telemetry
+767109118,,0.339,0.0,1.0,excellent,"{""excellent"": 5}",0.86,excellent,True,1.0,[w4w] smoothness from scooter telemetry
+767109119,,1.2,0.0,1.0,excellent,"{""good"": 12, ""excellent"": 29}",0.375,excellent,True,0.707,[w4w] smoothness from scooter telemetry
+767109120,,0.0,0.0,1.0,excellent,"{""good"": 1}",0.4,good,False,0.0,[w4w] smoothness from scooter telemetry
+775809564,intermediate,0.0,0.0,1.0,,"{""good"": 1}",0.37,good,,,[w4w] smoothness from scooter telemetry
+775809565,,1.036,0.0,1.0,excellent,"{""good"": 32, ""excellent"": 1}",0.422,good,False,0.03,[w4w] smoothness from scooter telemetry
+775809567,,2.442,0.0,1.0,excellent,"{""good"": 10, ""excellent"": 81}",0.78,excellent,True,0.89,[w4w] smoothness from scooter telemetry
+775809568,intermediate,0.723,0.0,1.0,,"{""excellent"": 4}",0.624,excellent,,,[w4w] smoothness from scooter telemetry
+780656069,intermediate,0.0,0.0,1.0,,"{""excellent"": 1}",0.4,excellent,,,[w4w] smoothness from scooter telemetry
+793460725,,0.798,0.0,1.0,excellent,"{""good"": 4, ""excellent"": 5}",0.555,excellent,True,0.556,[w4w] smoothness from scooter telemetry
+794861401,,0.267,0.0,1.0,intermediate,"{""excellent"": 5}",0.564,excellent,False,0.0,[w4w] smoothness from scooter telemetry
+794861402,,0.921,27.8,0.571,excellent,"{""excellent"": 7, ""good"": 1, ""very_bad"": 6}",0.461,excellent,True,0.5,[w4w] smoothness from scooter telemetry
+798027302,,0.87,0.0,1.0,excellent,"{""excellent"": 49}",0.345,excellent,True,1.0,[w4w] smoothness from scooter telemetry
+798027305,,1.052,0.0,1.0,excellent,"{""excellent"": 4}",0.876,excellent,True,1.0,[w4w] smoothness from scooter telemetry
+798027306,,2.226,0.0,1.0,excellent,"{""excellent"": 10, ""good"": 14}",0.504,good,False,0.417,[w4w] smoothness from scooter telemetry
+826144817,intermediate,1.588,0.0,1.0,,"{""excellent"": 11, ""good"": 11, ""intermediate"": 1}",0.497,excellent,,,[w4w] smoothness from scooter telemetry
+845156368,intermediate,0.657,0.0,1.0,,"{""excellent"": 2}",0.7,excellent,,,[w4w] smoothness from scooter telemetry
+845156374,intermediate,1.635,5.4,0.994,,"{""good"": 41, ""excellent"": 108, ""intermediate"": 7, ""bad"": 1}",0.733,excellent,,,[w4w] smoothness from scooter telemetry
+884808160,,1.073,0.0,1.0,good,"{""good"": 36, ""excellent"": 19}",0.589,good,True,0.655,[w4w] smoothness from scooter telemetry
+1080369698,,1.087,0.0,1.0,excellent,"{""excellent"": 9}",0.392,excellent,True,1.0,[w4w] smoothness from scooter telemetry
+1080369704,,1.129,54.8,0.617,excellent,"{""very_bad"": 39, ""bad"": 2, ""intermediate"": 9, ""good"": 8, ""excellent"": 49}",0.369,excellent,True,0.458,[w4w] smoothness from scooter telemetry
+1242750581,,0.423,0.0,0.5,,"{""very_bad"": 1, ""intermediate"": 1}",0.4,very_bad,,,[w4w] smoothness from scooter telemetry
+1244543424,intermediate,0.0,0.0,1.0,,"{""excellent"": 1}",0.4,excellent,,,[w4w] smoothness from scooter telemetry
+1251141018,intermediate,0.713,0.0,1.0,,"{""excellent"": 10, ""good"": 9}",0.87,excellent,,,[w4w] smoothness from scooter telemetry
+1251141129,,0.0,0.0,1.0,excellent,"{""intermediate"": 1}",0.7,intermediate,False,0.0,[w4w] smoothness from scooter telemetry
+1251141143,,1.388,0.0,1.0,good,"{""excellent"": 25, ""good"": 16}",0.795,excellent,False,0.39,[w4w] smoothness from scooter telemetry
+1251141147,,1.982,0.0,1.0,intermediate,"{""excellent"": 71}",0.36,excellent,False,0.0,[w4w] smoothness from scooter telemetry
+1251141149,intermediate,0.271,0.0,1.0,,"{""excellent"": 8}",0.85,excellent,,,[w4w] smoothness from scooter telemetry
+1301268451,,1.097,70.4,0.688,intermediate,"{""intermediate"": 30, ""excellent"": 23, ""very_bad"": 24}",0.614,intermediate,True,0.39,[w4w] smoothness from scooter telemetry
+1301273821,intermediate,0.636,0.0,1.0,,"{""excellent"": 19}",0.832,excellent,,,[w4w] smoothness from scooter telemetry
+1304537986,,0.0,0.0,1.0,excellent,"{""good"": 1}",0.426,good,False,0.0,[w4w] smoothness from scooter telemetry
+1318371363,intermediate,0.0,0.0,1.0,,"{""good"": 1}",0.4,good,,,[w4w] smoothness from scooter telemetry
+1318371364,,0.896,0.0,1.0,excellent,"{""good"": 11, ""excellent"": 16}",0.267,excellent,True,0.593,[w4w] smoothness from scooter telemetry
+1318371365,,0.0,0.0,1.0,excellent,"{""excellent"": 1}",0.24,excellent,True,1.0,[w4w] smoothness from scooter telemetry
+1318371366,,0.709,0.0,1.0,excellent,"{""excellent"": 6}",0.76,excellent,True,1.0,[w4w] smoothness from scooter telemetry
+1363332256,,1.682,0.0,1.0,excellent,"{""good"": 1, ""excellent"": 2}",0.867,excellent,True,0.667,[w4w] smoothness from scooter telemetry
+1390450973,,1.21,16.6,0.818,good,"{""excellent"": 50, ""good"": 9, ""intermediate"": 4, ""bad"": 2, ""very_bad"": 12}",0.787,excellent,False,0.117,[w4w] smoothness from scooter telemetry
+1416103097,intermediate,0.301,0.0,1.0,,"{""excellent"": 5}",0.8,excellent,,,[w4w] smoothness from scooter telemetry
+1424378961,,1.215,101.3,0.5,excellent,"{""good"": 9, ""excellent"": 2, ""bad"": 3, ""very_bad"": 8}",0.529,good,False,0.091,[w4w] smoothness from scooter telemetry
+1424483343,,2.437,0.0,1.0,excellent,"{""excellent"": 34}",0.732,excellent,True,1.0,[w4w] smoothness from scooter telemetry
+1424483344,,3.395,0.0,1.0,excellent,"{""excellent"": 146}",0.731,excellent,True,1.0,[w4w] smoothness from scooter telemetry
+1424483345,,5.982,0.0,1.0,excellent,"{""excellent"": 61}",0.757,excellent,True,1.0,[w4w] smoothness from scooter telemetry
+1467370638,intermediate,3.412,0.0,1.0,,"{""excellent"": 20}",0.729,excellent,,,[w4w] smoothness from scooter telemetry
+1467370640,intermediate,0.481,0.0,1.0,,"{""good"": 1, ""excellent"": 3}",0.362,excellent,,,[w4w] smoothness from scooter telemetry
+1470410155,,1.183,0.0,1.0,good,"{""excellent"": 13, ""good"": 16, ""intermediate"": 3}",0.366,good,True,0.5,[w4w] smoothness from scooter telemetry
+1470410156,,0.692,0.0,1.0,good,"{""excellent"": 2}",0.807,excellent,False,0.0,[w4w] smoothness from scooter telemetry
+1470410157,,0.0,0.0,1.0,good,"{""good"": 1}",0.4,good,True,1.0,[w4w] smoothness from scooter telemetry
+1470410158,,1.06,0.0,1.0,good,"{""excellent"": 27, ""good"": 13}",0.673,excellent,False,0.325,[w4w] smoothness from scooter telemetry
+1470410166,,0.0,0.0,1.0,excellent,"{""good"": 1}",0.7,good,False,0.0,[w4w] smoothness from scooter telemetry
+1470410175,,0.0,0.0,1.0,excellent,"{""good"": 1}",0.4,good,False,0.0,[w4w] smoothness from scooter telemetry
+1470410176,,0.173,3.0,0.947,good,"{""very_bad"": 2, ""intermediate"": 4, ""bad"": 4, ""good"": 7, ""excellent"": 97}",0.729,excellent,False,0.061,[w4w] smoothness from scooter telemetry
+1470783285,,1.408,0.0,1.0,good,"{""good"": 8, ""excellent"": 33}",0.381,excellent,False,0.195,[w4w] smoothness from scooter telemetry
+1471471199,intermediate,1.714,0.0,1.0,,"{""good"": 24, ""excellent"": 8}",0.354,good,,,[w4w] smoothness from scooter telemetry
+1471471202,intermediate,0.0,0.0,1.0,,"{""good"": 1}",0.7,good,,,[w4w] smoothness from scooter telemetry
+1471471206,intermediate,0.0,0.0,1.0,,"{""excellent"": 1}",1.0,excellent,,,[w4w] smoothness from scooter telemetry
+1471471221,,0.0,0.0,1.0,excellent,"{""good"": 1}",0.4,good,False,0.0,[w4w] smoothness from scooter telemetry
+1471471227,,2.434,0.0,1.0,good,"{""excellent"": 38}",0.767,excellent,False,0.0,[w4w] smoothness from scooter telemetry
+1471471230,,0.0,0.0,1.0,excellent,"{""good"": 1}",0.66,good,False,0.0,[w4w] smoothness from scooter telemetry
+1471471231,,0.0,0.0,1.0,good,"{""good"": 1}",0.7,good,True,1.0,[w4w] smoothness from scooter telemetry
+1471471232,,1.15,0.0,1.0,excellent,"{""excellent"": 17}",0.699,excellent,True,1.0,[w4w] smoothness from scooter telemetry
+1471807296,intermediate,8.388,0.0,1.0,,"{""excellent"": 215}",0.327,excellent,,,[w4w] smoothness from scooter telemetry
+1471807297,intermediate,1.532,0.0,1.0,,"{""excellent"": 30}",0.662,excellent,,,[w4w] smoothness from scooter telemetry
+1472741824,intermediate,0.0,0.0,1.0,,"{""good"": 1}",0.4,good,,,[w4w] smoothness from scooter telemetry
+1473230903,intermediate,0.0,0.0,1.0,,"{""good"": 1}",0.7,good,,,[w4w] smoothness from scooter telemetry
+1473230904,intermediate,0.0,0.0,1.0,,"{""excellent"": 1}",0.7,excellent,,,[w4w] smoothness from scooter telemetry
+1473431865,intermediate,0.444,0.0,1.0,,"{""intermediate"": 1, ""good"": 1}",0.844,intermediate,,,[w4w] smoothness from scooter telemetry
+1473431866,intermediate,0.96,0.0,1.0,,"{""good"": 2, ""excellent"": 36}",0.574,excellent,,,[w4w] smoothness from scooter telemetry
