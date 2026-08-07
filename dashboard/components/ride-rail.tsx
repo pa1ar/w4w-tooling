@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { OsmLoginPill } from "@/components/osm-login-pill";
 import { StatusPill } from "@/components/status-pill";
+import { W4WWordmark } from "@/components/w4w-wordmark";
 import type { ManifestRide, RideStatus } from "@/lib/manifest";
 import { cn } from "@/lib/utils";
 
@@ -34,12 +35,10 @@ export function RideRail({
         <Link
           href="/"
           aria-label="Wheels4Wheels dashboard"
-          className="inline-flex flex-col items-start gap-1 group"
+          className="inline-flex w-full flex-col items-start gap-1.5 group"
         >
-          <span className="font-sans text-[26px] font-light leading-5 text-sidebar-foreground">
-            Wheels4Wheels
-          </span>
-          <span className="font-sans text-[26px] font-light leading-5 text-[color:var(--w4w-primary)] transition-colors">
+          <W4WWordmark className="max-w-[220px]" />
+          <span className="font-sans text-[22px] font-light leading-5 text-[color:var(--w4w-primary)] transition-colors">
             dashboard
           </span>
         </Link>
