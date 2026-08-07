@@ -35,23 +35,10 @@ export function RideRail({
         <Link
           href="/"
           aria-label="Wheels4Wheels dashboard"
-          className="inline-flex w-full flex-col items-start gap-2 group"
+          className="inline-flex w-full flex-col items-start group"
         >
           <W4WWordmark className="max-w-[220px]" />
-          <span className="font-sans text-[22px] font-light leading-5 text-[color:var(--w4w-primary)] transition-colors">
-            dashboard
-          </span>
         </Link>
-        <div className="mt-2 text-xs text-muted-foreground">
-          <a
-            href="https://w4w.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-sidebar-foreground transition-colors"
-          >
-            Project
-          </a>
-        </div>
         <div className="mt-3 flex items-center justify-between">
           <div className="micro-label">
             {bboxName ?? "no batch"}

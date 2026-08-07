@@ -160,41 +160,38 @@ export function RideReview({
     <div className="flex-1 grid grid-cols-[minmax(0,1fr)_520px] min-h-0">
       <DemoModeDialog open={demoDialogOpen} onOpenChange={setDemoDialogOpen} />
 
-      {/* MAP column */}
-      <section className="p-6 overflow-y-auto bg-muted/30 border-r border-border min-w-0">
-        <div className="max-w-[880px] mx-auto flex flex-col gap-4">
-          <div className="flex items-center justify-between">
-            <div className="micro-label">trace · osm ways</div>
-            <div className="text-[11px] text-muted-foreground">
-              mapbox review map
-            </div>
+      {/* MAP column — fill available space, 20px padding */}
+      <section className="flex min-h-0 min-w-0 flex-col gap-4 overflow-hidden border-r border-border bg-muted/30 p-5">
+        <div className="flex shrink-0 items-center justify-between">
+          <div className="micro-label">trace · osm ways</div>
+          <div className="text-[11px] text-muted-foreground">
+            mapbox review map
           </div>
+        </div>
 
-          {/* squarish map card */}
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-md border border-border bg-card shadow-[0_1px_0_rgb(0_0_0/0.02)]">
-            <iframe
-              title={`ride-${rideId}-map`}
-              src={`/api/maps/${rideId}`}
-              className="w-full h-full bg-card"
-              loading="eager"
-            />
-          </div>
+        <div className="min-h-0 flex-1 overflow-hidden rounded-md border border-border bg-card shadow-[0_1px_0_rgb(0_0_0/0.02)]">
+          <iframe
+            title={`ride-${rideId}-map`}
+            src={`/api/maps/${rideId}`}
+            className="h-full w-full bg-card"
+            loading="eager"
+          />
+        </div>
 
-          <div className="grid grid-cols-5 gap-px rounded-md overflow-hidden border border-border bg-border">
-            {SMOOTH_ORDER.map((cls) => (
-              <div key={cls} className="bg-card px-3 py-2.5">
-                <div className="flex items-center gap-1.5">
-                  <SmoothnessDot value={cls} />
-                  <span className="text-[10px] uppercase tracking-[0.08em] text-muted-foreground">
-                    {cls.replace("_", " ")}
-                  </span>
-                </div>
-                <div className="mt-1 mono-num text-lg leading-none">
-                  {classCounts[cls] ?? 0}
-                </div>
+        <div className="grid shrink-0 grid-cols-5 gap-px overflow-hidden rounded-md border border-border bg-border">
+          {SMOOTH_ORDER.map((cls) => (
+            <div key={cls} className="bg-card px-3 py-2.5">
+              <div className="flex items-center gap-1.5">
+                <SmoothnessDot value={cls} />
+                <span className="text-[10px] uppercase tracking-[0.08em] text-muted-foreground">
+                  {cls.replace("_", " ")}
+                </span>
               </div>
-            ))}
-          </div>
+              <div className="mt-1 mono-num text-lg leading-none">
+                {classCounts[cls] ?? 0}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
