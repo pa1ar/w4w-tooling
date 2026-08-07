@@ -35,7 +35,7 @@ export function RideRail({
         <Link
           href="/"
           aria-label="Wheels4Wheels dashboard"
-          className="inline-flex w-full flex-col items-start gap-1.5 group"
+          className="inline-flex w-full flex-col items-start gap-2 group"
         >
           <W4WWordmark className="max-w-[220px]" />
           <span className="font-sans text-[22px] font-light leading-5 text-[color:var(--w4w-primary)] transition-colors">
@@ -50,15 +50,6 @@ export function RideRail({
             className="underline underline-offset-2 hover:text-sidebar-foreground transition-colors"
           >
             Project
-          </a>{" "}
-          in collaboration with{" "}
-          <a
-            href="https://bolt.eu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-sidebar-foreground transition-colors"
-          >
-            Bolt
           </a>
         </div>
         <div className="mt-3 flex items-center justify-between">
