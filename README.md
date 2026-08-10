@@ -13,6 +13,10 @@ The review dashboard lives in `dashboard/`. It can run locally against generated
 `output/` data, or as a Vercel demo against committed `dashboard/demo-output/output`
 artifacts with OSM mutations disabled.
 
+[Live demo](https://w4w-tooling.vercel.app)
+
+![W4W review dashboard demo](docs/images/dashboard-demo.jpg)
+
 ## Setup
 
 ```bash
