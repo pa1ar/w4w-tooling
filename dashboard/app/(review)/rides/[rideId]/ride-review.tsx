@@ -28,7 +28,7 @@ export function RideReview({
   proposals: Proposal[];
 }) {
   const [minCoverage, setMinCoverage] = useState(0.7);
-  const [minAgree, setMinAgree] = useState(0.7);
+  const [minAgree, setMinAgree] = useState(0.9);
   const [manualChecks, setManualChecks] = useState<Record<number, boolean | null>>({});
   const [pushing, startPush] = useTransition();
   const [exporting, startExport] = useTransition();

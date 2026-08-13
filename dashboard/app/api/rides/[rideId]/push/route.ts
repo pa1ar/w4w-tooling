@@ -24,6 +24,7 @@ interface PushResult {
 export const maxDuration = 10;
 
 const OSM_EDIT_SCRIPT = path.join(REPO_ROOT, "scripts", "OSM", "osm_edit.py");
+const PYTHON = path.join(REPO_ROOT, ".venv", "bin", "python");
 
 export async function POST(
   req: Request,
@@ -84,7 +85,7 @@ function runSetTag(row: Row, rideId: string): Promise<PushResult> {
       "--comment", row.comment || `[w4w] smoothness (ride ${rideId})`,
       "-y",
     ];
-    const proc = spawn("python3", args, { cwd: REPO_ROOT, env: process.env });
+    const proc = spawn(PYTHON, args, { cwd: REPO_ROOT, env: process.env });
     let stdout = "";
     let stderr = "";
     proc.stdout.on("data", (b) => (stdout += b.toString()));

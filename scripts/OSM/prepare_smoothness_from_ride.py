@@ -44,7 +44,7 @@ OUTPUT_DIR = PROJECT_ROOT / "output"
 # default Overpass; can be overridden via CLI/env
 OVERPASS_URL = os.getenv("OVERPASS_URL", "https://overpass-api.de/api/interpreter")
 OVERPASS_FALLBACKS = [
-    "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass.private.coffee/api/interpreter",
     "https://overpass-api.de/api/interpreter",
     "https://overpass.openstreetmap.ru/api/interpreter",
 ]
@@ -269,14 +269,32 @@ def mapbox_match(coords: List[Tuple[float, float]], access_token: str, profile: 
 
 def fetch_osm_ways_bbox(min_lat: float, min_lon: float, max_lat: float, max_lon: float,
                         overpass_url: str, timeout_s: int) -> List[Dict]:
+    ways_file = os.getenv("OVERPASS_WAYS_FILE", "").strip()
+    if ways_file:
+        with open(ways_file, "r", encoding="utf-8") as f:
+            cached = json.load(f)
+        elements = cached.get("ways") or cached.get("elements") or []
+        return [el for el in elements if el.get("type") == "way"]
+
+    highway_regex = os.getenv("OVERPASS_HIGHWAY_REGEX", "").strip()
+    highway_filter = (
+        f'["highway"~"{highway_regex}"]'
+        if highway_regex
+        else '["highway"]'
+    )
     query = f"""
     [out:json][timeout:{timeout_s}];
     (
-      way["highway"]({min_lat},{min_lon},{max_lat},{max_lon});
+      way{highway_filter}({min_lat},{min_lon},{max_lat},{max_lon});
     );
     out tags geom;
     """
-    resp = requests.post(overpass_url, data=query.encode("utf-8"), timeout=timeout_s + 10)
+    resp = requests.post(
+        overpass_url,
+        data={"data": query},
+        headers={"User-Agent": "W4W-Tooling/0.1"},
+        timeout=timeout_s + 10,
+    )
     resp.raise_for_status()
     data = resp.json()
     return [el for el in data.get("elements", []) if el.get("type") == "way"]
