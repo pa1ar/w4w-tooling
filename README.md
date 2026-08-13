@@ -13,6 +13,8 @@ The review dashboard lives in `dashboard/`. It can run locally against generated
 `output/` data, or as a Vercel demo against committed `dashboard/demo-output/output`
 artifacts with OSM mutations disabled.
 
+**Note:** Data in this repo and in the live demo is a small, curated excerpt – a handful of sample rides from central Tallinn, used for demonstration and reproducibility only. It does not represent the full telemetry dataset or complete coverage of any area and may be outdated.
+
 [Live demo](https://w4w-tooling.vercel.app)
 
 ![W4W review dashboard demo](docs/images/dashboard-demo.jpg)
@@ -87,3 +89,4 @@ NEXT_PUBLIC_W4W_TOOLING_REPO_URL=https://github.com/<org>/w4w-tooling
 - Do not commit generated `output/`.
 - Do not commit `.env`, `.osm_token.json`, or OAuth credentials.
 - Keep `example_data/` small and safe for reproducible verification.
+- `example_data/` and `dashboard/demo-output/` contain a demo excerpt only, not the full dataset.

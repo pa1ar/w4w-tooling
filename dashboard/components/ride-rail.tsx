@@ -4,6 +4,7 @@ import { OsmLoginPill } from "@/components/osm-login-pill";
 import { StatusPill } from "@/components/status-pill";
 import { W4WWordmark } from "@/components/w4w-wordmark";
 import type { ManifestRide, RideStatus } from "@/lib/manifest";
+import { IS_DEMO_MODE } from "@/lib/paths";
 import { cn } from "@/lib/utils";
 
 const TOOLING_REPO_URL =
@@ -58,7 +59,9 @@ export function RideRail({
       </div>
 
       <nav className="flex-1 overflow-y-auto">
-        <div className="micro-label px-5 pt-4 pb-2">rides</div>
+        <div className="micro-label px-5 pt-4 pb-2">
+          {IS_DEMO_MODE ? "sample rides" : "rides"}
+        </div>
         <ul className="px-2 space-y-0.5">
           {rides.length === 0 ? (
             <li className="px-3 py-8 text-center text-xs text-muted-foreground">
