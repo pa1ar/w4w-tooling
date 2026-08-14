@@ -106,7 +106,7 @@ export default async function LogsPage() {
                     <th className="font-medium text-left py-2.5 pr-4">when</th>
                     <th className="font-medium text-left py-2.5 pr-4">ride</th>
                     <th className="font-medium text-left py-2.5 pr-4">way</th>
-                    <th className="font-medium text-left py-2.5 pr-4">value</th>
+                    <th className="font-medium text-left py-2.5 pr-4">change</th>
                     <th className="font-medium text-left py-2.5 pr-4">status</th>
                     <th className="font-medium text-left py-2.5 pr-4">
                       changeset
@@ -142,7 +142,24 @@ export default async function LogsPage() {
                         </a>
                       </td>
                       <td className="py-2.5 pr-4">
-                        <SmoothnessBadge value={e.value} />
+                        <div className="flex items-center gap-2 whitespace-nowrap">
+                          {e.before_tag_present === false ? (
+                            <span className="mono-num text-[10px] text-muted-foreground">
+                              absent
+                            </span>
+                          ) : e.before_tag_value ? (
+                            <SmoothnessBadge value={e.before_tag_value} />
+                          ) : null}
+                          {e.before_tag_present !== undefined && (
+                            <span className="text-muted-foreground">→</span>
+                          )}
+                          <SmoothnessBadge value={e.value} />
+                        </div>
+                        {e.before_version !== undefined && e.after_version !== undefined && (
+                          <div className="mt-1 mono-num text-[9.5px] text-muted-foreground">
+                            v{e.before_version} → v{e.after_version}
+                          </div>
+                        )}
                       </td>
                       <td className="py-2.5 pr-4">
                         {e.status === "ok" ? (

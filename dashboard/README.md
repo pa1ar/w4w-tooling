@@ -65,6 +65,7 @@ NEXT_PUBLIC_W4W_TOOLING_REPO_URL=https://github.com/pa1ar/w4w-tooling
 - "Export YAML" writes `pending_upload/<ride_id>.yaml` - safe, local only
 - "Push to OSM" spawns `osm_edit.py set-tag` per approved row, one changeset per way. token probe runs before push; 401 blocks with terminal instructions
 - every push appends to `output/upload_log.jsonl`; view at `/logs`
+- each entry captures the prior tag presence/value and OSM version, plus the resulting version and changeset, so a later corrective changeset can restore only the tag this tool changed
 
 ## state
 

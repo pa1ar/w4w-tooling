@@ -4,6 +4,7 @@ import path from "node:path";
 import { IS_DEMO_MODE, REPO_ROOT } from "@/lib/paths";
 import { appendUploadLog } from "@/lib/manifest";
 import { probeToken } from "@/lib/osm-token";
+import { OsmAuditSnapshot, parseOsmAuditSnapshots } from "@/lib/osm-audit";
 
 interface Row {
   way_id: number;
@@ -18,6 +19,8 @@ interface PushResult {
   status: "ok" | "error";
   changeset_id?: string;
   changeset_url?: string;
+  before?: OsmAuditSnapshot;
+  after?: OsmAuditSnapshot;
   error?: string;
 }
 
@@ -67,6 +70,11 @@ export async function POST(
       status: res.status,
       changeset_id: res.changeset_id,
       changeset_url: res.changeset_url,
+      before_version: res.before?.version,
+      before_changeset_id: res.before?.changeset_id ?? undefined,
+      before_tag_present: res.before?.tag_present,
+      before_tag_value: res.before?.tag_value,
+      after_version: res.after?.version,
       error: res.error,
     });
   }
@@ -91,6 +99,7 @@ function runSetTag(row: Row, rideId: string): Promise<PushResult> {
     proc.stdout.on("data", (b) => (stdout += b.toString()));
     proc.stderr.on("data", (b) => (stderr += b.toString()));
     proc.on("close", (code) => {
+      const audit = parseOsmAuditSnapshots(stdout);
       if (code === 0) {
         // parse changeset id / url out of osm_edit stdout
         const csMatch = stdout.match(/Changeset:\s+(https:\/\/\S+changeset\/(\d+))/i)
@@ -112,6 +121,8 @@ function runSetTag(row: Row, rideId: string): Promise<PushResult> {
           status: "ok",
           changeset_id,
           changeset_url,
+          before: audit.before,
+          after: audit.after,
         });
       } else {
         const tail = (stderr || stdout).split("\n").filter(Boolean).slice(-5).join(" | ");
@@ -119,6 +130,8 @@ function runSetTag(row: Row, rideId: string): Promise<PushResult> {
           way_id: row.way_id,
           value: row.value,
           status: "error",
+          before: audit.before,
+          after: audit.after,
           error: tail || `exit ${code}`,
         });
       }

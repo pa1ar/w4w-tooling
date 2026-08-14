@@ -318,6 +318,29 @@ def upload_way(way_id: str, way_xml: etree.Element, access_token: str, config: D
     return new_version
 
 
+def audit_snapshot(way: etree.Element, key: str) -> Dict:
+    """return the OSM state needed to reverse one tag edit safely"""
+    tag_value = None
+    tag_present = False
+    for tag in way.findall('tag'):
+        if tag.get('k') == key:
+            tag_value = tag.get('v')
+            tag_present = True
+            break
+
+    return {
+        'version': int(way.get('version')),
+        'changeset_id': way.get('changeset'),
+        'tag_present': tag_present,
+        'tag_value': tag_value,
+    }
+
+
+def print_audit_snapshot(phase: str, snapshot: Dict) -> None:
+    """emit one machine-readable line while keeping normal CLI output intact"""
+    print(f"W4W_AUDIT_{phase.upper()}:" + json.dumps(snapshot, separators=(',', ':')))
+
+
 def close_changeset(changeset_id: str, access_token: str, config: Dict) -> None:
     """close the changeset"""
     url = f"{config['OSM_BASE_URL']}/api/0.6/changeset/{changeset_id}/close"
@@ -353,12 +376,11 @@ def set_tag_command(args: argparse.Namespace, config: Dict) -> None:
         way = way_xml.find('way')
         current_version = way.get('version')
 
+        before_snapshot = audit_snapshot(way, key)
+        print_audit_snapshot('before', before_snapshot)
+
         # Read current tag value if present
-        current_tag_value = None
-        for tag in way.findall('tag'):
-            if tag.get('k') == key:
-                current_tag_value = tag.get('v')
-                break
+        current_tag_value = before_snapshot['tag_value']
 
         # Decide action based on current tag state
         if current_tag_value is not None:
@@ -398,6 +420,13 @@ def set_tag_command(args: argparse.Namespace, config: Dict) -> None:
         new_version = upload_way(way_id, modified_xml, access_token, config)
 
         close_changeset(changeset_id, access_token, config)
+
+        print_audit_snapshot('after', {
+            'version': int(new_version),
+            'changeset_id': changeset_id,
+            'tag_present': True,
+            'tag_value': value,
+        })
 
         changeset_url = f"https://www.openstreetmap.org/changeset/{changeset_id}"
         way_url = f"https://www.openstreetmap.org/way/{way_id}"

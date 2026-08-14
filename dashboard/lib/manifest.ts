@@ -107,6 +107,11 @@ export interface UploadLogEntry {
   status: "ok" | "error";
   changeset_id?: string;
   changeset_url?: string;
+  before_version?: number;
+  before_changeset_id?: string;
+  before_tag_present?: boolean;
+  before_tag_value?: string | null;
+  after_version?: number;
   error?: string;
   source?: "demo";
 }

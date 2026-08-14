@@ -8,6 +8,7 @@
     "build": "next build",
     "build:demo": "NEXT_PUBLIC_W4W_DEMO_MODE=1 W4W_DASHBOARD_MODE=demo next build",
     "start": "next start",
+    "test": "bun test",
     "lint": "eslint"
   },
   "dependencies": {
