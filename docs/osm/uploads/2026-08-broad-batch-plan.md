@@ -31,7 +31,7 @@ other highways, followed by proposal and evidence strength.
 
 | Batch | Planned review date | Candidates | High confidence | Broad | State |
 |---:|:---|---:|---:|---:|:---|
-| 1 | 2026-08-14 | 100 | 100 | 0 | preflight only |
+| 1 | 2026-08-14 | 100 | 100 | 0 | uploaded and verified |
 | 2 | 2026-08-17 | 329 | 211 | 118 | preflight only |
 | 3 | 2026-08-18 | 329 | 0 | 329 | preflight only |
 | 4 | 2026-08-19 | 328 | 0 | 328 | preflight only |
@@ -40,6 +40,23 @@ other highways, followed by proposal and evidence strength.
 | 7 | 2026-08-24 | 328 | 0 | 328 | preflight only |
 | 8 | 2026-08-25 | 328 | 0 | 328 | preflight only |
 | | Total | 2,398 | 311 | 2,087 | |
+
+## Batch 1 upload result
+
+Pavel manually reviewed and selected all 99 remaining paths in batch 1. Together
+with the previously recorded first path, the batch completed at
+`2026-08-14T15:53:46Z`:
+
+- 100 of 100 unique ways pushed and logged
+- 100 unique changesets with no missing changeset URLs
+- 76 `smoothness=intermediate` and 24 `smoothness=bad`
+- 0 upload errors and 0 ledger-sync errors
+- first changeset: [187449968](https://www.openstreetmap.org/changeset/187449968)
+- final changeset: [187450825](https://www.openstreetmap.org/changeset/187450825)
+
+A fresh public OSM multi-fetch at `2026-08-14T15:54:35Z` returned all 100 ways.
+Every live `smoothness` value and latest changeset ID exactly matched the local
+batch ledger. No mismatch or missing way was found.
 
 The active local per-way ledger and JSON manifests are in
 `pending_upload/osm-broad-2026-08/`. The older conservative-only directory is

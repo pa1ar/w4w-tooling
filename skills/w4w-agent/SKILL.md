@@ -133,3 +133,13 @@ On 2026-08-14, ride `257673408` pushed only way `987191899` as
 `smoothness` tag. Way `1456825967` stayed unselected at 87% agreement. The local
 audit displays `absent -> intermediate`, `v13 -> v14`, with the public changeset
 link.
+
+## Verified batch 1
+
+On 2026-08-14, Pavel manually selected the 99 remaining paths in broad batch 1.
+The queue completed with 100 of 100 unique ways pushed across 100 changesets,
+including the already recorded first path. The batch contains 76
+`smoothness=intermediate` and 24 `smoothness=bad` edits. The local upload log
+recorded 100 successful batch rows, no upload errors, and no ledger-sync errors.
+A fresh public OSM multi-fetch returned all 100 ways and confirmed that every
+live tag value and latest changeset ID matched the batch ledger.
