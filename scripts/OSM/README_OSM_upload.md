@@ -7,7 +7,8 @@ This script allows you to upload surface smoothness data to OpenStreetMap via th
 1. **OpenStreetMap Account**: You need an OSM account with editing permissions
 2. **Registered OAuth Application**: Register your app at https://www.openstreetmap.org/oauth2/applications
    - Required permissions: `write_api`
-   - Redirect URI: Should match your configuration (e.g., `https://w4w.vercel.app/`)
+   - Local CLI redirect URI: `http://127.0.0.1:8765/callback`
+   - The registered URI and `OSM_REDIRECT_URI` must match exactly
 3. **Mapbox Token** (for map-matching): create a token in your Mapbox account
 
 ## Setup
@@ -39,7 +40,7 @@ Edit `.env` and fill in your OAuth credentials from the OSM OAuth application pa
 ```ini
 OSM_CLIENT_ID=your_client_id_here
 OSM_CLIENT_SECRET=your_client_secret_here
-OSM_REDIRECT_URI=https://your-callback.example/
+OSM_REDIRECT_URI=http://127.0.0.1:8765/callback
 OSM_SCOPES=write_api
 
 # OSM API endpoints (leave as-is for production)
@@ -65,15 +66,31 @@ This will:
 1. Print an authorization URL
 2. Open it in your browser (or copy-paste it)
 3. You'll authorize the application on OSM
-4. You'll be redirected to your redirect URI with a `code` parameter
-5. Copy the full redirect URL and paste it back into the terminal
-6. The script exchanges the code for an access token
-7. Token is saved to `.osm_token.json` (also gitignored)
+4. OSM redirects to the temporary local callback server
+5. The script exchanges the code for an access token
+6. Token is saved to `.osm_token.json` (also gitignored)
+7. Set the token file to owner-only permissions with `chmod 600 .osm_token.json`
 
-Example redirect URL:
-```
-https://your-callback.example/?code=ABC123DEF456GHI789...
-```
+If a non-local redirect is configured, the CLI falls back to manual code or
+redirect-URL paste. Do not use a deployment URL unless that exact URI is
+registered with the OSM application.
+
+A `write_api`-only token may return `403` from the OSM user-details endpoint
+because it lacks identity/read scopes. The dashboard treats this as
+authenticated but scope-limited.
+
+## Audit and reversal
+
+Dashboard pushes append to `output/upload_log.jsonl` and are visible at
+`/logs`. New records capture the prior tag presence/value and way version, the
+resulting version, and the public changeset link.
+
+OSM changesets cannot be deleted after closing. Restore a prior state with a
+new corrective changeset after checking the current live way. Restore only the
+tag changed by W4W so later edits from other mappers are preserved.
+
+See `docs/reference/2026-08-14-guarded-osm-upload-trial.md` for the verified
+first pathway upload and the complete guarded runbook.
 
 ### Step 2: Edit Ways
 

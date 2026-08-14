@@ -61,6 +61,11 @@ uv run python scripts/OSM/osm_edit.py set-tag \
 
 Tokens are stored in `.osm_token.json`, which is gitignored.
 
+For the guarded review, upload, audit, and reversal workflow, see
+[First guarded OSM pathway upload](docs/reference/2026-08-14-guarded-osm-upload-trial.md).
+The same operating rules are packaged in the supplied
+[W4W agent skill](skills/w4w-agent/SKILL.md).
+
 ## Dashboard Demo
 
 ```bash
