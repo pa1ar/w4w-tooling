@@ -341,6 +341,14 @@ def print_audit_snapshot(phase: str, snapshot: Dict) -> None:
     print(f"W4W_AUDIT_{phase.upper()}:" + json.dumps(snapshot, separators=(',', ':')))
 
 
+def ensure_create_only_allowed(snapshot: Dict, key: str) -> None:
+    """Refuse a create-only edit when the current way already has the tag."""
+    if snapshot['tag_present']:
+        raise ValueError(
+            f"create-only refused: way already has {key}={snapshot['tag_value']!r}"
+        )
+
+
 def close_changeset(changeset_id: str, access_token: str, config: Dict) -> None:
     """close the changeset"""
     url = f"{config['OSM_BASE_URL']}/api/0.6/changeset/{changeset_id}/close"
@@ -363,6 +371,7 @@ def set_tag_command(args: argparse.Namespace, config: Dict) -> None:
     value = args.value
     comment = args.comment
     auto_confirm = getattr(args, 'yes', False)
+    create_only = getattr(args, 'create_only', False)
 
     print(f"\nPreparing to modify way {way_id}: {key}={value}")
     print(f"Changeset comment: {comment}\n")
@@ -378,6 +387,9 @@ def set_tag_command(args: argparse.Namespace, config: Dict) -> None:
 
         before_snapshot = audit_snapshot(way, key)
         print_audit_snapshot('before', before_snapshot)
+
+        if create_only:
+            ensure_create_only_allowed(before_snapshot, key)
 
         # Read current tag value if present
         current_tag_value = before_snapshot['tag_value']
@@ -513,6 +525,11 @@ Examples:
     set_tag_parser.add_argument('--key', required=True, help='Tag key (e.g., smoothness)')
     set_tag_parser.add_argument('--value', required=True, help='Tag value (e.g., intermediate)')
     set_tag_parser.add_argument('--comment', default='W4W: update way tags', help='Changeset comment')
+    set_tag_parser.add_argument(
+        '--create-only',
+        action='store_true',
+        help='Refuse the edit if the current way already has the target tag',
+    )
     set_tag_parser.add_argument('--open', action='store_true', help='Open changeset in browser after upload')
 
     args = parser.parse_args()

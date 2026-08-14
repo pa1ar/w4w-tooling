@@ -66,6 +66,17 @@ For the guarded review, upload, audit, and reversal workflow, see
 The same operating rules are packaged in the supplied
 [W4W agent skill](skills/w4w-agent/SKILL.md).
 
+For read-only preparation of the conservative citywide candidates:
+
+```bash
+uv run python scripts/OSM/prepare_upload_batches.py
+```
+
+This writes local preflight manifests and a Markdown ledger under
+`pending_upload/osm-conservative-2026-08/`. It never writes to OSM. See the
+[August batch plan](docs/osm/uploads/2026-08-conservative-batch-plan.md) for the
+validation and community gates that must pass before systematic editing.
+
 ## Dashboard Demo
 
 ```bash

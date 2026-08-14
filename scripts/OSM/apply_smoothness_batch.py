@@ -66,6 +66,7 @@ def main() -> None:
                 "--key", args.key,
                 "--value", value,
                 "--comment", comment,
+                "--create-only",
                 "-y",
             ]
             if args.open:

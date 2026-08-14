@@ -91,6 +91,7 @@ function runSetTag(row: Row, rideId: string): Promise<PushResult> {
       "--key", row.key,
       "--value", row.value,
       "--comment", row.comment || `[w4w] smoothness (ride ${rideId})`,
+      "--create-only",
       "-y",
     ];
     const proc = spawn(PYTHON, args, { cwd: REPO_ROOT, env: process.env });

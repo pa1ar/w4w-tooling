@@ -63,7 +63,7 @@ NEXT_PUBLIC_W4W_TOOLING_REPO_URL=https://github.com/pa1ar/w4w-tooling
 - click "Review" on a ride -> detail page with mapbox map (iframe of pipeline's generated html) + proposals table
 - adjust min-coverage / min-agree sliders to auto-include/exclude rows; manual checkboxes override
 - "Export YAML" writes `pending_upload/<ride_id>.yaml` - safe, local only
-- "Push to OSM" spawns `osm_edit.py set-tag` per approved row, one changeset per way. token probe runs before push; 401 blocks with terminal instructions
+- "Push to OSM" spawns `osm_edit.py set-tag --create-only` per approved row. token probe runs before push; 401 blocks with terminal instructions
 - every push appends to `output/upload_log.jsonl`; view at `/logs`
 - each entry captures the prior tag presence/value and OSM version, plus the resulting version and changeset, so a later corrective changeset can restore only the tag this tool changed
 
@@ -79,7 +79,8 @@ NEXT_PUBLIC_W4W_TOOLING_REPO_URL=https://github.com/pa1ar/w4w-tooling
 ## safety
 
 - all state is local. nothing is pushed anywhere until you click "Push to OSM" in the ui.
-- each push creates one osm changeset per way (per-way granularity chosen so every change is visible on osm.org/way/<id> history independently).
+- the current one-way editor creates one changeset per way and is limited to isolated, individually reviewed trials. systematic edits need community review, regional grouping, and mechanical-edit metadata first.
+- create-only mode refuses any way that already has the target tag, including when it was added after proposal generation.
 - pre-flight token probe blocks pushes when expired.
 - failed pipeline rides (e.g. overpass rate-limit) are surfaced as "pipeline error" on the ride list; re-run the batch to retry.
 - in demo mode, server routes hard-block mutations even if the client is modified.

@@ -80,8 +80,33 @@ that does not mean the write token is invalid.
 8. If a request fails ambiguously, inspect the live way and local log before
    retrying. Never create a second changeset blindly.
 
-Each selected way creates one OSM changeset. Nothing is written to OSM until
-the user confirms the push.
+For this isolated trial, each selected way creates one OSM changeset. Nothing is
+written to OSM until the user confirms the push. Do not extend that changeset
+shape to a systematic run: OSM's automated-edit guidance asks for edits grouped
+into sensible small regions rather than one changeset per object.
+
+The dashboard and batch CLI now pass `--create-only`, which refuses the write if
+the live way already has the target tag. This guard runs after the fresh way fetch
+and before a changeset is opened, including when `-y` is used.
+
+## Systematic edit boundary
+
+The August conservative plan is documented in
+`docs/osm/uploads/2026-08-conservative-batch-plan.md`. Its generated rows remain
+preflight-only under `pending_upload/osm-conservative-2026-08/`.
+
+A general approval to upload a candidate pool is not an exact-manifest approval
+and does not replace OSM's community process. Before a multi-way run:
+
+1. validate every citywide candidate through the ride-level pipeline;
+2. document data permission, method, consultation, opt-out, and reversal;
+3. complete the applicable Import Guidelines and Automated Edits process;
+4. refresh current OSM tags and approve the exact manifest;
+5. group edits geographically and add required changeset metadata.
+
+The current one-way editor does not yet implement regional changesets or the
+systematic `mechanical` and `description` metadata. It remains for isolated,
+individually reviewed edits.
 
 ## Audit and reversal
 

@@ -300,7 +300,11 @@ uv run python scripts/OSM/apply_smoothness_batch.py \
   --dry-run
 ```
 
-Remove `--dry-run` when ready to upload. Each change uses our `osm_edit.py set-tag -y` command with a clear changeset comment.
+Do not remove `--dry-run` for a systematic run. The legacy executor creates one
+changeset per way and is only suitable for isolated, individually reviewed edits.
+Systematic edits require the applicable OSM community process, a fresh exact
+manifest, sensible regional changesets, and the required mechanical-edit metadata.
+Every legacy call now uses `--create-only` so it cannot overwrite the target tag.
 
 ## How It Works
 

@@ -23,6 +23,10 @@ reversal.
 Never interpret a generated proposal as an upload-ready claim. Keep the final
 external OSM write under explicit human control.
 
+For systematic or external-data edits, a general user approval does not replace
+exact manifest review or the OSM community process. Prepare offline first and keep
+every manifest at `upload_allowed=false` until all gates pass.
+
 ## OAuth
 
 Use the exact redirect registered for the OSM application. For the local CLI:
@@ -46,11 +50,40 @@ to display an identity badge.
 ## Push safety
 
 - Fetch the current way before editing.
-- Do not overwrite an existing tag without an explicit review decision.
-- Use one changeset per way so every result is independently auditable.
+- Use `--create-only` for gap filling and refuse every existing target tag, even
+  when the command is auto-confirmed.
+- A single guarded trial may use one changeset for one way. For a systematic run,
+  group approved objects into small geographic changesets so history stays readable.
+- For automated edits, include the required `mechanical=yes` or `bot=yes`, a useful
+  comment, and a public `description=*` documentation link.
 - After an ambiguous error, inspect the live way and local log before retrying.
 - Do not commit `.env`, `.osm_token.json`, telemetry, `output/`, or
   `pending_upload/`.
+
+## Systematic batch preparation
+
+Read `docs/osm/uploads/2026-08-conservative-batch-plan.md` and the current OSM
+Import Guidelines plus Automated Edits code before a multi-way run.
+
+Prepare the conservative local ledger with:
+
+```bash
+uv run python scripts/OSM/prepare_upload_batches.py
+```
+
+The command refreshes current public OSM state, excludes existing
+`smoothness=*`, and writes preflight-only manifests under
+`pending_upload/osm-conservative-2026-08/`. It never writes to OSM. Do not turn
+the citywide spatial estimates into uploads until every row has been validated by
+the ride-level pipeline.
+
+Before a systematic upload, require:
+
+1. source permission and license confirmation;
+2. public method, sample, opt-out, and revert documentation;
+3. applicable community review and waiting period completed;
+4. exact manifest approval after a fresh OSM-state check;
+5. regional changeset grouping and required metadata implemented.
 
 ## Audit contract
 
