@@ -137,9 +137,17 @@ export function RideReview({
       const out = (await res.json()) as { results: PushResult[] };
       setPushResults(out.results);
       const ok = out.results.filter((r) => r.status === "ok").length;
-      toast.success(`Pushed ${ok} of ${out.results.length}`, {
-        description: "Reload page to see updated status.",
-      });
+      const ledgerUpdated = out.results.filter((r) => r.ledger_updated).length;
+      const ledgerErrors = out.results.filter((r) => r.ledger_error);
+      if (ledgerErrors.length > 0) {
+        toast.error(`Pushed ${ok}, but ${ledgerErrors.length} ledger update failed`, {
+          description: "Check output/ledger_sync_errors.jsonl before continuing.",
+        });
+      } else {
+        toast.success(`Pushed ${ok} of ${out.results.length}`, {
+          description: `${ledgerUpdated} broad ledger row${ledgerUpdated === 1 ? "" : "s"} updated.`,
+        });
+      }
     });
   }
 
@@ -536,14 +544,24 @@ function PushResultsTable({ results }: { results: PushResult[] }) {
             </td>
             <td className="pl-2 pr-5 py-2 max-w-[260px]">
               {r.changeset_url ? (
-                <a
-                  href={r.changeset_url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[11px] mono-num text-[color:var(--accent)] hover:underline"
-                >
-                  cs {r.changeset_id}
-                </a>
+                <div>
+                  <a
+                    href={r.changeset_url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-[11px] mono-num text-[color:var(--accent)] hover:underline"
+                  >
+                    cs {r.changeset_id}
+                  </a>
+                  {r.ledger_updated ? (
+                    <span className="ml-2 text-[10px] text-muted-foreground">ledger updated</span>
+                  ) : null}
+                  {r.ledger_error ? (
+                    <span className="block text-[10px] text-destructive" title={r.ledger_error}>
+                      ledger sync failed
+                    </span>
+                  ) : null}
+                </div>
               ) : (
                 <span
                   className="text-[11px] text-destructive truncate block"
@@ -571,6 +589,8 @@ interface PushResult {
   status: "ok" | "error";
   changeset_id?: string;
   changeset_url?: string;
+  ledger_updated?: boolean;
+  ledger_error?: string;
   error?: string;
 }
 

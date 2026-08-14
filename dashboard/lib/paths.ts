@@ -16,10 +16,12 @@ export const TELEMETRY_DIR = path.join(DATA_ROOT, "telemetry_json");
 export const OUTPUT_DIR = path.join(DATA_ROOT, "output");
 export const GEOJSON_DIR = path.join(OUTPUT_DIR, "proposals_geojson");
 export const PENDING_UPLOAD_DIR = path.join(DATA_ROOT, "pending_upload");
+export const BROAD_UPLOAD_LEDGER_DIR = path.join(PENDING_UPLOAD_DIR, "osm-broad-2026-08");
 
 export const SELECTED_RIDES = path.join(OUTPUT_DIR, "selected_rides.json");
 export const BATCH_MANIFEST = path.join(OUTPUT_DIR, "batch_manifest.json");
 export const UPLOAD_LOG = path.join(OUTPUT_DIR, "upload_log.jsonl");
+export const LEDGER_SYNC_ERROR_LOG = path.join(OUTPUT_DIR, "ledger_sync_errors.jsonl");
 export const DEMO_UPLOAD_LOG = path.join(OUTPUT_DIR, "demo_upload_log.jsonl");
 export const OSM_TOKEN_FILE = path.join(REPO_ROOT, ".osm_token.json");
 

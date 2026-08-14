@@ -107,6 +107,12 @@ Treat `output/upload_log.jsonl` as append-only operational evidence. It is
 gitignored and local, so capture durable summaries in tracked documentation.
 Keep older log entries readable when fields are absent.
 
+For a successful way in the active broad plan, require `ledger_updated=true` in
+the push response. Confirm that its batch JSON and `upload_ledger.md` show
+`status=pushed`, upload time, before/after versions, and the changeset link. If
+propagation fails, preserve the authoritative upload log, inspect
+`output/ledger_sync_errors.jsonl`, and reconcile the ledger before continuing.
+
 ## Reversal
 
 Do not call a closed changeset revoked or deleted. Create a corrective changeset.

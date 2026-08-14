@@ -21,6 +21,8 @@ interface PushResult {
   changeset_url?: string;
   before?: OsmAuditSnapshot;
   after?: OsmAuditSnapshot;
+  ledger_updated?: boolean;
+  ledger_error?: string;
   error?: string;
 }
 
@@ -60,8 +62,7 @@ export async function POST(
   const results: PushResult[] = [];
   for (const row of rows) {
     const res = await runSetTag(row, rideId);
-    results.push(res);
-    await appendUploadLog({
+    const ledger = await appendUploadLog({
       ts: new Date().toISOString(),
       ride_id: rideId,
       way_id: row.way_id,
@@ -77,6 +78,9 @@ export async function POST(
       after_version: res.after?.version,
       error: res.error,
     });
+    res.ledger_updated = ledger.updated;
+    res.ledger_error = ledger.error;
+    results.push(res);
   }
 
   return NextResponse.json({ results });

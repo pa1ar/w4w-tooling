@@ -3,8 +3,10 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import {
   BATCH_MANIFEST,
+  BROAD_UPLOAD_LEDGER_DIR,
   DEMO_UPLOAD_LOG,
   IS_DEMO_MODE,
+  LEDGER_SYNC_ERROR_LOG,
   PENDING_UPLOAD_DIR,
   UPLOAD_LOG,
   proposalsCsv,
@@ -12,6 +14,10 @@ import {
   waysGeojson,
   pendingYaml,
 } from "./paths";
+import {
+  LedgerPropagationResult,
+  propagateUploadToLedger,
+} from "./upload-ledger";
 
 export interface ManifestRide {
   ride_id: string;
@@ -134,9 +140,25 @@ export async function readUploadLog(): Promise<UploadLogEntry[]> {
   }
 }
 
-export async function appendUploadLog(entry: UploadLogEntry): Promise<void> {
+export async function appendUploadLog(entry: UploadLogEntry): Promise<LedgerPropagationResult> {
   await fs.mkdir(path.dirname(UPLOAD_LOG), { recursive: true });
   await fs.appendFile(UPLOAD_LOG, JSON.stringify(entry) + "\n", "utf8");
+  if (entry.status !== "ok") return { matched: false, updated: false };
+  try {
+    return await propagateUploadToLedger(entry, BROAD_UPLOAD_LEDGER_DIR);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    try {
+      await fs.appendFile(
+        LEDGER_SYNC_ERROR_LOG,
+        JSON.stringify({ ts: new Date().toISOString(), way_id: entry.way_id, error: message }) + "\n",
+        "utf8",
+      );
+    } catch {
+      // The primary upload log was already persisted; surface the sync failure in the response.
+    }
+    return { matched: false, updated: false, error: message };
+  }
 }
 
 function uploadLogReadPath() {

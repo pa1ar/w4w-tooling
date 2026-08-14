@@ -66,6 +66,7 @@ NEXT_PUBLIC_W4W_TOOLING_REPO_URL=https://github.com/pa1ar/w4w-tooling
 - "Push to OSM" spawns `osm_edit.py set-tag --create-only` per approved row. token probe runs before push; 401 blocks with terminal instructions
 - every push appends to `output/upload_log.jsonl`; view at `/logs`
 - each entry captures the prior tag presence/value and OSM version, plus the resulting version and changeset, so a later corrective changeset can restore only the tag this tool changed
+- successful ways in the active broad plan are propagated into its batch JSON, summary counts, and Markdown ledger with the changeset URL; sync failures are recorded in `output/ledger_sync_errors.jsonl`
 
 ## state
 
@@ -75,6 +76,7 @@ NEXT_PUBLIC_W4W_TOOLING_REPO_URL=https://github.com/pa1ar/w4w-tooling
 | `output/batch_manifest.json` | last pipeline batch | re-run `run_pipeline_batch.py` |
 | `pending_upload/*.yaml` | exported manifests | `rm pending_upload/*.yaml` |
 | `output/upload_log.jsonl` | all osm pushes ever | `> output/upload_log.jsonl` (append-only by design) |
+| `output/ledger_sync_errors.jsonl` | upload events needing ledger reconciliation | inspect and reconcile before continuing |
 
 ## safety
 

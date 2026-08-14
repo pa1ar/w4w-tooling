@@ -137,5 +137,10 @@ is gitignored. It is local evidence, not a durable repository record. Export or
 copy approved audit summaries into tracked documentation when they must survive
 machine cleanup or support stakeholder reporting.
 
+For ways in the active broad plan, a successful dashboard upload also updates the
+matching batch JSON, summary counts, and `upload_ledger.md` with the changeset
+link and before/after audit fields. Check `output/ledger_sync_errors.jsonl` if the
+push response reports `ledger_updated=false` with `ledger_error`.
+
 Never commit raw telemetry, `.env`, `.osm_token.json`, generated `output/`, or
 `pending_upload/` manifests.

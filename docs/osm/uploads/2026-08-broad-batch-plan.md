@@ -47,6 +47,13 @@ superseded. Generated operational data remains gitignored. Actual successful
 edits continue to be recorded in `output/upload_log.jsonl`; approved audit
 summaries must be copied into tracked documentation for durable reporting.
 
+After each successful upload, the dashboard propagates the upload event into the
+matching batch JSON row and rebuilds `summary.json` and `upload_ledger.md`. The
+row becomes `pushed` and records the changeset link, upload time, ride ID,
+applied value, prior tag/version state, and resulting version. Propagation is
+idempotent. A propagation failure is returned by the push API and appended to
+`output/ledger_sync_errors.jsonl`; the primary upload log remains authoritative.
+
 ## Approval boundary
 
 Pavel's approval authorizes automatic processing of every source candidate that:
