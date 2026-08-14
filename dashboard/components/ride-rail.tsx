@@ -4,6 +4,7 @@ import { OsmLoginPill } from "@/components/osm-login-pill";
 import { StatusPill } from "@/components/status-pill";
 import { W4WWordmark } from "@/components/w4w-wordmark";
 import type { ManifestRide, RideStatus } from "@/lib/manifest";
+import type { BroadBatchSummary } from "@/lib/broad-batches";
 import { IS_DEMO_MODE } from "@/lib/paths";
 import { cn } from "@/lib/utils";
 
@@ -18,11 +19,13 @@ interface RailItem {
 
 export function RideRail({
   rides,
+  batches = [],
   bboxName,
   generatedAt,
   activeRideId,
 }: {
   rides: RailItem[];
+  batches?: BroadBatchSummary[];
   bboxName?: string;
   generatedAt?: string;
   activeRideId?: string;
@@ -59,6 +62,34 @@ export function RideRail({
       </div>
 
       <nav className="flex-1 overflow-y-auto">
+        {batches.length > 0 ? (
+          <>
+            <div className="micro-label px-5 pt-4 pb-2">path review batches</div>
+            <ul className="space-y-0.5 px-2">
+              {batches.map((batch) => (
+                <li key={batch.batch}>
+                  <Link
+                    href={`/batches/${batch.batch}`}
+                    className="group block rounded-md px-3 py-2.5 transition-colors hover:bg-sidebar-accent/70"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="mono-num text-[13px] text-sidebar-foreground">
+                        batch {String(batch.batch).padStart(2, "0")}
+                      </span>
+                      <span className="mono-num text-[10.5px] text-muted-foreground">
+                        {batch.pushed}/{batch.count}
+                      </span>
+                    </div>
+                    <div className="mt-1 text-[10.5px] text-muted-foreground">
+                      {batch.plannedReviewDate} · {batch.count} paths
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="mx-5 mt-4 border-t border-sidebar-border" />
+          </>
+        ) : null}
         <div className="micro-label px-5 pt-4 pb-2">
           {IS_DEMO_MODE ? "sample rides" : "rides"}
         </div>

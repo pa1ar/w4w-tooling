@@ -118,6 +118,9 @@ export interface UploadLogEntry {
   before_tag_present?: boolean;
   before_tag_value?: string | null;
   after_version?: number;
+  manual_reviewed?: boolean;
+  reviewed_by?: string;
+  reviewed_at?: string;
   error?: string;
   source?: "demo";
 }

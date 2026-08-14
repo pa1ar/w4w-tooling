@@ -80,10 +80,8 @@ that does not mean the write token is invalid.
 8. If a request fails ambiguously, inspect the live way and local log before
    retrying. Never create a second changeset blindly.
 
-For this isolated trial, each selected way creates one OSM changeset. Nothing is
-written to OSM until the user confirms the push. Do not extend that changeset
-shape to a systematic run: OSM's automated-edit guidance asks for edits grouped
-into sensible small regions rather than one changeset per object.
+Each selected way creates one OSM changeset. The batch dashboard uses a visible
+two-step confirmation before starting the sequential queue.
 
 The dashboard and batch CLI now pass `--create-only`, which refuses the write if
 the live way already has the target tag. This guard runs after the fresh way fetch
@@ -96,19 +94,29 @@ The August broad plan is documented in
 prioritized by confidence tier. Current generated rows remain preflight-only
 under `pending_upload/osm-broad-2026-08/`.
 
-Pavel approved eventual automatic processing of the full eligible pool on
-2026-08-14. That approval does not replace validation or OSM's community process.
-Before a multi-way run:
+Pavel confirmed Bolt publication permission and approved processing
+the full eligible pool on 2026-08-14. He reviews the exact paths in the dashboard,
+selects only legitimate ones, and accepts one confirmation for the selected set.
+The tool uses one transparent `[w4w]` changeset per path, refreshes live OSM state,
+refuses existing `smoothness=*`, and stops the queue on the first unexpected
+result.
 
-1. validate every citywide candidate through the ride-level pipeline;
-2. document data permission, method, consultation, opt-out, and reversal;
-3. complete the applicable Import Guidelines and Automated Edits process;
-4. refresh current OSM tags and validate the exact manifest;
-5. group edits geographically and add required changeset metadata.
+## Batch confirmation incident
 
-The current one-way editor does not yet implement regional changesets or the
-systematic `mechanical` and `description` metadata. It remains for isolated,
-individually reviewed edits.
+During browser QA at `2026-08-14T15:37:00Z`, the browser-native confirmation for
+the first selected batch path was accepted unexpectedly. This created one edit:
+
+- way `1523516301`: `smoothness=intermediate`
+- changeset `187449968`
+- OSM account `pa1ar`
+- before state: tag absent, way version 1
+- after state: way version 2
+
+No other batch path was written. The local upload log and broad ledger both
+captured the complete before/after record. Browser-native confirmation was then
+replaced with a visible two-step dashboard dialog so QA can inspect and cancel
+without triggering an upload. Keep the edit or create a corrective changeset
+only after Pavel's explicit decision.
 
 ## Audit and reversal
 

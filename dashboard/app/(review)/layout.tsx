@@ -1,6 +1,7 @@
 import { RideRail } from "@/components/ride-rail";
 import { readBatchManifest, deriveRideStatus, countPushedWays } from "@/lib/manifest";
 import { IS_DEMO_MODE } from "@/lib/paths";
+import { readBroadBatchSummaries } from "@/lib/broad-batches";
 
 export default async function ReviewLayout({
   children,
@@ -8,6 +9,7 @@ export default async function ReviewLayout({
   children: React.ReactNode;
 }) {
   const manifest = await readBatchManifest();
+  const batches = IS_DEMO_MODE ? [] : await readBroadBatchSummaries();
   const rails = manifest
     ? await Promise.all(
         manifest.rides.map(async (r) => ({
@@ -35,6 +37,7 @@ export default async function ReviewLayout({
         <div className="flex min-h-0 flex-1 overflow-hidden">
           <RideRail
             rides={rails}
+            batches={batches}
             bboxName={manifest?.bbox_name}
             generatedAt={manifest?.generated_at}
           />

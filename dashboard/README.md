@@ -60,6 +60,9 @@ NEXT_PUBLIC_W4W_TOOLING_REPO_URL=https://github.com/pa1ar/w4w-tooling
 ## flow
 
 - landing page `/` lists selected rides from `output/batch_manifest.json`
+- batch page `/batches/1` shows the first 100 exact OSM paths on one map, with current public tags and proposal evidence
+- batch selections start empty, persist in the browser across refreshes, and only become upload requests after the operator checks the paths and accepts one final confirmation
+- selected batch paths are sent sequentially through the same create-only editor; the run stops on the first unexpected response or ledger failure
 - click "Review" on a ride -> detail page with mapbox map (iframe of pipeline's generated html) + proposals table
 - adjust min-coverage / min-agree sliders to auto-include/exclude rows; manual checkboxes override
 - "Export YAML" writes `pending_upload/<ride_id>.yaml` - safe, local only
@@ -81,7 +84,8 @@ NEXT_PUBLIC_W4W_TOOLING_REPO_URL=https://github.com/pa1ar/w4w-tooling
 ## safety
 
 - all state is local. nothing is pushed anywhere until you click "Push to OSM" in the ui.
-- the current one-way editor creates one changeset per way and is limited to isolated, individually reviewed trials. systematic edits need community review, regional grouping, and mechanical-edit metadata first.
+- the batch interface is a manual review queue, not an upload-all preset. selections start empty and each selected path is marked as manually reviewed in the local audit.
+- the editor creates one transparent `[w4w]` changeset per selected path and stops immediately on an unexpected result.
 - create-only mode refuses any way that already has the target tag, including when it was added after proposal generation.
 - pre-flight token probe blocks pushes when expired.
 - failed pipeline rides (e.g. overpass rate-limit) are surfaced as "pipeline error" on the ride list; re-run the batch to retry.

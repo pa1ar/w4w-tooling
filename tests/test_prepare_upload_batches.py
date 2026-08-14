@@ -8,6 +8,7 @@ sys.path.insert(0, str(Path(__file__).parents[1] / "scripts" / "OSM"))
 
 from prepare_upload_batches import (  # noqa: E402
     load_candidates,
+    load_review_geometries,
     select_live_gaps,
     split_schedule,
     write_outputs,
@@ -86,6 +87,56 @@ class PrepareUploadBatchesTests(unittest.TestCase):
             self.assertTrue(summary["operator_automation_approval"]["external_gates_still_required"])
             self.assertIn('"upload_allowed": false', manifest)
             self.assertIn("| Status | Changeset |", ledger)
+
+    def test_writes_batch_review_geojson_when_geometry_is_available(self):
+        candidate = {
+            **self.candidate(8, "path", "intermediate", 3, 100, "high_confidence"),
+            "dominant_class": "good",
+            "bad_run_m": 0,
+            "observed_version": 2,
+            "observed_changeset_id": 12,
+            "observed_timestamp": "2026-08-14T00:00:00Z",
+            "observed_smoothness": None,
+            "observed_tags": {"highway": "path", "surface": "asphalt"},
+            "status": "needs_pipeline_validation",
+            "upload_allowed": False,
+            "operator_automation_approved": True,
+            "uploaded_at": None,
+            "changeset_id": None,
+            "changeset_url": None,
+        }
+        geometry = {8: {"type": "LineString", "coordinates": [[24.7, 59.4], [24.8, 59.5]]}}
+        with tempfile.TemporaryDirectory() as directory:
+            output_dir = Path(directory)
+            write_outputs(
+                output_dir,
+                Path("source.csv"),
+                "2026-08-14T00:00:00Z",
+                "potential",
+                1,
+                1,
+                [("2026-08-14", [candidate])],
+                [],
+                [],
+                geometry,
+            )
+            geojson = (output_dir / "batch-01-2026-08-14.geojson").read_text()
+            self.assertIn('"way_id":8', geojson)
+            self.assertIn('"coordinates":[[24.7,59.4],[24.8,59.5]]', geojson)
+
+    def test_loads_review_geometry_from_osm_snapshot(self):
+        snapshot = (
+            '{"elements":['
+            '{"type":"way","id":8,"geometry":[{"lat":59.4,"lon":24.7},{"lat":59.5,"lon":24.8}]},'
+            '{"type":"node","id":9,"lat":59.4,"lon":24.7}'
+            ']}'
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "osm.json"
+            path.write_text(snapshot)
+            geometries = load_review_geometries(path)
+
+        self.assertEqual(geometries[8]["coordinates"], [[24.7, 59.4], [24.8, 59.5]])
 
     def test_broad_scope_keeps_potential_rows_and_marks_conservative_priority(self):
         csv_text = (

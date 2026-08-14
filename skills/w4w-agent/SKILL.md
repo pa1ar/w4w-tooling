@@ -15,7 +15,8 @@ reversal.
 2. Generate proposals and review the map, coverage, agreement, bad-run evidence,
    and current OSM tags.
 3. Start the local dashboard and verify `osm · authed`.
-4. Select a small, auditable set of ways. Default to one way for the first push.
+4. For the prepared broad queue, open `/batches/1`, inspect the exact OSM paths,
+   and select only the legitimate ones. Selections persist locally and begin empty.
 5. Require the user to click the push button and accept its confirmation.
 6. Verify each live OSM way and closed changeset after the push.
 7. Check `/logs` and `output/upload_log.jsonl` for the local audit record.
@@ -23,10 +24,9 @@ reversal.
 Never interpret a generated proposal as an upload-ready claim. Keep the final
 external OSM write under explicit human control.
 
-For systematic or external-data edits, record the user's automation approval but
-do not treat it as a replacement for candidate validation or the OSM community
-process. Prepare offline first and keep every manifest at `upload_allowed=false`
-until all gates pass.
+For multi-way work, treat every selected path as manually reviewed. The user's
+single confirmation may start the selected queue, but every item must still pass
+the live create-only check and be logged separately.
 
 ## OAuth
 
@@ -53,18 +53,15 @@ to display an identity badge.
 - Fetch the current way before editing.
 - Use `--create-only` for gap filling and refuse every existing target tag, even
   when the command is auto-confirmed.
-- A single guarded trial may use one changeset for one way. For a systematic run,
-  group approved objects into small geographic changesets so history stays readable.
-- For automated edits, include the required `mechanical=yes` or `bot=yes`, a useful
-  comment, and a public `description=*` documentation link.
+- Create one changeset per reviewed path with a transparent `[w4w]` comment and
+  the authenticated operator account.
 - After an ambiguous error, inspect the live way and local log before retrying.
 - Do not commit `.env`, `.osm_token.json`, telemetry, `output/`, or
   `pending_upload/`.
 
 ## Systematic batch preparation
 
-Read `docs/osm/uploads/2026-08-broad-batch-plan.md` and the current OSM
-Import Guidelines plus Automated Edits code before a multi-way run.
+Read `docs/osm/uploads/2026-08-broad-batch-plan.md` before a multi-way run.
 
 Prepare the full broad local ledger with:
 
@@ -73,29 +70,24 @@ uv run python scripts/OSM/prepare_upload_batches.py
 ```
 
 The command refreshes current public OSM state, excludes existing
-`smoothness=*`, and writes preflight-only manifests under
-`pending_upload/osm-broad-2026-08/`. It never writes to OSM. It prioritizes the
-experimental conservative subset, then the remaining broad candidates. Do not
-turn the citywide spatial estimates into uploads until every row has been
-validated by the ride-level pipeline.
+`smoothness=*`, captures the live public tags and exact way geometry, and writes
+review manifests under `pending_upload/osm-broad-2026-08/`. It never writes to
+OSM. It prioritizes the experimental conservative subset, then the remaining
+broad candidates.
 
-Before a systematic upload, require:
-
-1. source permission and license confirmation;
-2. public method, sample, opt-out, and revert documentation;
-3. applicable community review and waiting period completed;
-4. exact manifest validation after a fresh OSM-state check;
-5. regional changeset grouping and required metadata implemented.
+The dashboard exposes these manifests as a path review queue. The operator
+checks the map and evidence, explicitly selects legitimate paths, and starts the
+selected queue with one confirmation. Requests run sequentially and stop on the
+first conflict, upload error, or ledger error.
 
 For the August 2026 broad batch, Pavel confirmed on 2026-08-14 that
 Bolt permits publishing telemetry-derived smoothness tags to OSM.
 Treat this source-permission gate as complete; raw telemetry remains private.
 
-Pavel approved eventual automatic processing of the full broad gap-only pool on
-2026-08-14. That internal approval applies only to candidates that pass every
-gate, remain untagged, and stay inside the community-reviewed scope. It removes
-the need for a repeated per-way click after the gates pass; it does not authorize
-uploads before then.
+Pavel approved processing the full broad gap-only pool on 2026-08-14 after he
+manually reviews and selects the paths. Each selected path must remain untagged
+at write time. Changesets use the `[w4w]` comment and Pavel's authenticated OSM
+account; no regional grouping is used.
 
 ## Audit contract
 

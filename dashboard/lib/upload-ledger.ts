@@ -16,6 +16,9 @@ export interface LedgerUploadEvent {
   before_tag_present?: boolean;
   before_tag_value?: string | null;
   after_version?: number;
+  manual_reviewed?: boolean;
+  reviewed_by?: string;
+  reviewed_at?: string;
 }
 
 export interface LedgerPropagationResult {
@@ -90,6 +93,9 @@ export async function propagateUploadToLedger(
     applied_value: entry.value,
     changeset_id: changesetId,
     changeset_url: changesetUrl,
+    manual_reviewed: entry.manual_reviewed,
+    reviewed_by: entry.reviewed_by,
+    reviewed_at: entry.reviewed_at,
   });
   const auditFields = {
     before_version: entry.before_version,

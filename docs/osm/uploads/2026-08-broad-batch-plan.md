@@ -54,42 +54,32 @@ applied value, prior tag/version state, and resulting version. Propagation is
 idempotent. A propagation failure is returned by the push API and appended to
 `output/ledger_sync_errors.jsonl`; the primary upload log remains authoritative.
 
-## Approval boundary
+## Review and approval boundary
 
-Pavel's approval authorizes automatic processing of every source candidate that:
+Pavel approved processing the full source pool through a manual dashboard review.
+The dashboard starts with no paths selected. He inspects the exact OSM ways,
+selects the legitimate ones, and accepts one confirmation for that selected set.
+The queue processes each reviewed path sequentially and stops on the first
+unexpected result.
 
-1. passes candidate-level pipeline validation;
+Each selected candidate must:
+
+1. pass candidate-level pipeline validation;
 2. still lacks `smoothness=*` immediately before the write;
-3. remains inside the documented and community-reviewed scope.
+3. be explicitly selected after map and evidence review.
 
-It does not authorize uploading a mismatched candidate, overwriting a newly added
-tag, ignoring an opt-out, or proceeding over unresolved community concerns. Every
-manifest records the internal approval and keeps `upload_allowed=false` until the
-external gates pass.
-
-## Required external gates
-
-Treat the run as a systematic external-data edit and satisfy both the import and
-automated-edit process unless the OSM community or Data Working Group confirms a
-narrower classification.
+It does not authorize uploading a mismatched candidate or overwriting a newly
+added tag. Every manifest records the source approval and the upload endpoint
+independently validates each reviewed row.
 
 Source permission is confirmed. On 2026-08-14 Pavel confirmed that
 Bolt permits publishing telemetry-derived smoothness tags to
 OpenStreetMap. Raw telemetry remains private.
 
-1. Re-run each candidate through the production ride-level pipeline and retain
-   the supporting ride IDs and evidence.
-2. Publish the method, sample output, consultation, opt-out, and revert plan.
-3. Complete local/community review. The current Import Guidelines allow an import
-   to start only after 14 days and after all concerns are addressed.
-4. Use a suitable account and changeset metadata, including `mechanical=yes` or
-   `bot=yes` and a public `description=*` documentation link when applicable.
-5. Group approved objects into sensible small geographic changesets.
-6. Refresh OSM state immediately before every write. The create-only guard must
-   refuse any way that gained `smoothness=*` after preparation.
-
-August 25 remains the offline review target. It cannot be the systematic
-upload-completion date because public review has not begun.
+The operating decision is to use Pavel's authenticated account, one transparent
+`[w4w]` changeset comment per reviewed path, and no regional grouping. The
+create-only guard refreshes OSM immediately before every write and refuses any
+way that gained `smoothness=*` after preparation.
 
 ## Reversal boundary
 
@@ -102,11 +92,12 @@ for validation and community approval.
 ## Current tooling boundary
 
 - The dashboard and legacy batch CLI invoke `--create-only`.
-- Generated manifests carry the operator approval, `upload_allowed=false`, and no
-  upload command.
-- The current editor still creates one changeset per way and lacks systematic
-  `mechanical` and `description` tags. A regional systematic uploader must be built
-  only after the documented scope is accepted.
+- Generated manifests carry the source approval and exact public OSM snapshots.
+- `/batches/1` presents 100 high-confidence paths for manual selection. It keeps
+  the selection locally across refreshes and sends the selected paths one at a
+  time through the guarded editor.
+- The current editor creates one `[w4w]` changeset per way and uses Pavel's OSM
+  username for attribution.
 - No OSM writes were made while preparing or readjusting this plan.
 
 ## Policy sources

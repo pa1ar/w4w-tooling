@@ -21,6 +21,7 @@ import requests
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 DEFAULT_INPUT = PROJECT_ROOT / "output" / "tallinn-coverage" / "osm-way-estimates.csv"
 DEFAULT_OUTPUT = PROJECT_ROOT / "pending_upload" / "osm-broad-2026-08"
+DEFAULT_OSM_SNAPSHOT = PROJECT_ROOT / "output" / "tallinn-coverage" / "osm-highways.json"
 DEFAULT_DATES = (
     "2026-08-14",
     "2026-08-17",
@@ -153,6 +154,27 @@ def load_live_way_state(path: Path) -> dict[int, dict[str, Any]]:
     return live
 
 
+def load_review_geometries(path: Path) -> dict[int, dict[str, Any]]:
+    """Load public OSM way geometry used only for the local review map."""
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    geometries: dict[int, dict[str, Any]] = {}
+    for element in payload.get("elements", []):
+        if element.get("type") != "way":
+            continue
+        coordinates = [
+            [point["lon"], point["lat"]]
+            for point in element.get("geometry", [])
+            if "lon" in point and "lat" in point
+        ]
+        if len(coordinates) < 2:
+            continue
+        geometries[int(element["id"])] = {
+            "type": "LineString",
+            "coordinates": coordinates,
+        }
+    return geometries
+
+
 def candidate_sort_key(candidate: dict[str, Any]) -> tuple[Any, ...]:
     return (
         0 if candidate["confidence_tier"] == "high_confidence" else 1,
@@ -194,6 +216,7 @@ def select_live_gaps(
                 "observed_changeset_id": state["changeset"],
                 "observed_timestamp": state["timestamp"],
                 "observed_smoothness": None,
+                "observed_tags": state["tags"],
                 "status": "needs_pipeline_validation",
                 "upload_allowed": False,
                 "operator_automation_approved": True,
@@ -239,6 +262,7 @@ def write_outputs(
     batches: list[tuple[str, list[dict[str, Any]]]],
     already_tagged: list[dict[str, Any]],
     missing: list[int],
+    review_geometries: dict[int, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
     scheduled = sum(len(items) for _, items in batches)
@@ -319,6 +343,31 @@ def write_outputs(
         (output_dir / f"batch-{batch_index:02d}-{date}.json").write_text(
             json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
         )
+        if review_geometries is not None:
+            features = []
+            for item in manifest_items:
+                geometry = review_geometries.get(item["way_id"])
+                if geometry is None:
+                    continue
+                features.append(
+                    {
+                        "type": "Feature",
+                        "geometry": geometry,
+                        "properties": {
+                            "rank": item["rank"],
+                            "way_id": item["way_id"],
+                            "highway": item["highway"],
+                            "proposed_value": item["proposed_value"],
+                            "confidence_tier": item["confidence_tier"],
+                            "coverage_pct": item["coverage_pct"],
+                            "rides": item["rides"],
+                        },
+                    }
+                )
+            geojson = {"type": "FeatureCollection", "features": features}
+            (output_dir / f"batch-{batch_index:02d}-{date}.geojson").write_text(
+                json.dumps(geojson, separators=(",", ":")) + "\n", encoding="utf-8"
+            )
 
     (output_dir / "upload_ledger.md").write_text(
         "\n".join(ledger_lines) + "\n", encoding="utf-8"
@@ -333,6 +382,12 @@ def main() -> None:
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--live-state-file", type=Path)
+    parser.add_argument(
+        "--osm-snapshot",
+        type=Path,
+        default=DEFAULT_OSM_SNAPSHOT,
+        help="OSM JSON with way geometry for local batch review maps",
+    )
     parser.add_argument("--osm-base-url", default="https://api.openstreetmap.org")
     parser.add_argument("--first-batch-size", type=int, default=100)
     parser.add_argument("--dates", nargs="+", default=list(DEFAULT_DATES))
@@ -353,6 +408,11 @@ def main() -> None:
     observed_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
     eligible, already_tagged, missing = select_live_gaps(candidates, live)
     batches = split_schedule(eligible, tuple(args.dates), args.first_batch_size)
+    review_geometries = (
+        load_review_geometries(args.osm_snapshot)
+        if args.osm_snapshot and args.osm_snapshot.exists()
+        else None
+    )
     summary = write_outputs(
         args.output_dir,
         args.input,
@@ -363,6 +423,7 @@ def main() -> None:
         batches,
         already_tagged,
         missing,
+        review_geometries,
     )
     print(json.dumps(summary, indent=2))
     print(f"Local ledger: {args.output_dir / 'upload_ledger.md'}")

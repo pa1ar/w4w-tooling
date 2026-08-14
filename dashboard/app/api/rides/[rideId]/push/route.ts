@@ -5,12 +5,15 @@ import { IS_DEMO_MODE, REPO_ROOT } from "@/lib/paths";
 import { appendUploadLog } from "@/lib/manifest";
 import { probeToken } from "@/lib/osm-token";
 import { OsmAuditSnapshot, parseOsmAuditSnapshots } from "@/lib/osm-audit";
+import { readBroadBatchManifest } from "@/lib/broad-batches";
+import { validateReviewedBatchRow } from "@/lib/broad-batch-validation";
 
 interface Row {
   way_id: number;
   key: string;
   value: string;
   comment: string;
+  manual_reviewed?: boolean;
 }
 
 interface PushResult {
@@ -51,6 +54,19 @@ export async function POST(
     return NextResponse.json({ error: "no rows" }, { status: 400 });
   }
 
+  const batchMatch = rideId.match(/^batch-(\d{1,2})$/);
+  if (batchMatch) {
+    const manifest = await readBroadBatchManifest(Number(batchMatch[1]));
+    if (!manifest) {
+      return NextResponse.json({ error: "batch not found" }, { status: 404 });
+    }
+    for (const row of rows) {
+      const expected = manifest.items.find((item) => item.way_id === row.way_id);
+      const error = validateReviewedBatchRow(row, expected);
+      if (error) return NextResponse.json({ error }, { status: 400 });
+    }
+  }
+
   const probe = await probeToken();
   if (!probe.ok) {
     return NextResponse.json(
@@ -62,8 +78,9 @@ export async function POST(
   const results: PushResult[] = [];
   for (const row of rows) {
     const res = await runSetTag(row, rideId);
+    const timestamp = new Date().toISOString();
     const ledger = await appendUploadLog({
-      ts: new Date().toISOString(),
+      ts: timestamp,
       ride_id: rideId,
       way_id: row.way_id,
       key: row.key,
@@ -76,6 +93,9 @@ export async function POST(
       before_tag_present: res.before?.tag_present,
       before_tag_value: res.before?.tag_value,
       after_version: res.after?.version,
+      manual_reviewed: row.manual_reviewed,
+      reviewed_by: row.manual_reviewed ? "Pavel" : undefined,
+      reviewed_at: row.manual_reviewed ? timestamp : undefined,
       error: res.error,
     });
     res.ledger_updated = ledger.updated;
