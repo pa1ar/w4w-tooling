@@ -73,16 +73,19 @@ Treat the run as a systematic external-data edit and satisfy both the import and
 automated-edit process unless the OSM community or Data Working Group confirms a
 narrower classification.
 
+Source permission is confirmed. On 2026-08-14 Pavel confirmed that
+Bolt permits publishing telemetry-derived smoothness tags to
+OpenStreetMap. Raw telemetry remains private.
+
 1. Re-run each candidate through the production ride-level pipeline and retain
    the supporting ride IDs and evidence.
-2. Confirm telemetry source permission and ODbL-compatible licensing.
-3. Publish the method, sample output, consultation, opt-out, and revert plan.
-4. Complete local/community review. The current Import Guidelines allow an import
+2. Publish the method, sample output, consultation, opt-out, and revert plan.
+3. Complete local/community review. The current Import Guidelines allow an import
    to start only after 14 days and after all concerns are addressed.
-5. Use a suitable account and changeset metadata, including `mechanical=yes` or
+4. Use a suitable account and changeset metadata, including `mechanical=yes` or
    `bot=yes` and a public `description=*` documentation link when applicable.
-6. Group approved objects into sensible small geographic changesets.
-7. Refresh OSM state immediately before every write. The create-only guard must
+5. Group approved objects into sensible small geographic changesets.
+6. Refresh OSM state immediately before every write. The create-only guard must
    refuse any way that gained `smoothness=*` after preparation.
 
 August 25 remains the offline review target. It cannot be the systematic

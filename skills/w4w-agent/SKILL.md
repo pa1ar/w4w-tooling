@@ -87,6 +87,10 @@ Before a systematic upload, require:
 4. exact manifest validation after a fresh OSM-state check;
 5. regional changeset grouping and required metadata implemented.
 
+For the August 2026 broad batch, Pavel confirmed on 2026-08-14 that
+Bolt permits publishing telemetry-derived smoothness tags to OSM.
+Treat this source-permission gate as complete; raw telemetry remains private.
+
 Pavel approved eventual automatic processing of the full broad gap-only pool on
 2026-08-14. That internal approval applies only to candidates that pass every
 gate, remain untagged, and stay inside the community-reviewed scope. It removes

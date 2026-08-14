@@ -34,11 +34,17 @@ DEFAULT_DATES = (
 PATHWAY_TYPES = {"cycleway", "footway", "path", "pedestrian"}
 UPLOAD_GATES = (
     "candidate_level_pipeline_validation",
-    "source_license_confirmation",
     "osm_community_process_complete",
     "regional_changeset_uploader_and_metadata_ready",
     "fresh_live_create_only_check",
 )
+SOURCE_PERMISSION_CONFIRMATION = {
+    "confirmed": True,
+    "confirmed_by": "Pavel",
+    "confirmed_at": "2026-08-14",
+    "parties": "Bolt",
+    "scope": "publishing telemetry-derived smoothness tags to OpenStreetMap",
+}
 OPERATOR_APPROVAL = {
     "approved": True,
     "approved_by": "Pavel",
@@ -258,6 +264,7 @@ def write_outputs(
         "status": "preflight_only",
         "upload_allowed": False,
         "operator_automation_approval": OPERATOR_APPROVAL,
+        "source_permission_confirmation": SOURCE_PERMISSION_CONFIRMATION,
         "required_gates": list(UPLOAD_GATES),
         "proposal_counts": dict(
             Counter(item["proposed_value"] for _, items in batches for item in items)
@@ -304,6 +311,7 @@ def write_outputs(
             "status": "preflight_only",
             "approval_status": "operator_approved_external_gates_pending",
             "operator_automation_approval": OPERATOR_APPROVAL,
+            "source_permission_confirmation": SOURCE_PERMISSION_CONFIRMATION,
             "upload_allowed": False,
             "required_gates": list(UPLOAD_GATES),
             "items": manifest_items,
