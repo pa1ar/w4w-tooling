@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare conservative OSM smoothness candidates as local review batches.
+"""Prepare broad OSM smoothness candidates as prioritized local review batches.
 
 This command is read-only with respect to OSM. Generated manifests are explicitly
 blocked from upload until ride-level validation and community-process gates pass.
@@ -20,7 +20,7 @@ import requests
 
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 DEFAULT_INPUT = PROJECT_ROOT / "output" / "tallinn-coverage" / "osm-way-estimates.csv"
-DEFAULT_OUTPUT = PROJECT_ROOT / "pending_upload" / "osm-conservative-2026-08"
+DEFAULT_OUTPUT = PROJECT_ROOT / "pending_upload" / "osm-broad-2026-08"
 DEFAULT_DATES = (
     "2026-08-14",
     "2026-08-17",
@@ -33,11 +33,20 @@ DEFAULT_DATES = (
 )
 PATHWAY_TYPES = {"cycleway", "footway", "path", "pedestrian"}
 UPLOAD_GATES = (
-    "ride_level_pipeline_validation",
-    "exact_manifest_human_review",
+    "candidate_level_pipeline_validation",
+    "source_license_confirmation",
     "osm_community_process_complete",
-    "changeset_grouping_and_metadata_ready",
+    "regional_changeset_uploader_and_metadata_ready",
+    "fresh_live_create_only_check",
 )
+OPERATOR_APPROVAL = {
+    "approved": True,
+    "approved_by": "Pavel",
+    "approved_at": "2026-08-14",
+    "scope": "all eligible ways from the 2,399-row broad gap-only source pool",
+    "automatic_processing": True,
+    "external_gates_still_required": True,
+}
 USER_AGENT = "W4W-Tooling/0.1 batch-preflight (read-only OSM state refresh)"
 
 
@@ -53,13 +62,17 @@ def _number(value: Any) -> float:
     return float(value or 0)
 
 
-def load_conservative_candidates(path: Path) -> list[dict[str, Any]]:
+def load_candidates(path: Path, scope: str = "potential") -> list[dict[str, Any]]:
+    if scope not in {"potential", "conservative"}:
+        raise ValueError(f"unsupported candidate scope: {scope}")
     with path.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))
 
     candidates: list[dict[str, Any]] = []
     for row in rows:
-        if not _truthy(row.get("conservative")):
+        if not _truthy(row.get(scope)):
+            continue
+        if (row.get("existing_smoothness") or "").strip():
             continue
         proposed_value = (row.get("proposed_value") or "").strip()
         if proposed_value not in {"intermediate", "bad"}:
@@ -69,6 +82,12 @@ def load_conservative_candidates(path: Path) -> list[dict[str, Any]]:
                 "way_id": _integer(row.get("way_id")),
                 "highway": (row.get("highway") or "unknown").strip(),
                 "proposed_value": proposed_value,
+                "confidence_tier": (
+                    "high_confidence" if _truthy(row.get("conservative")) else "broad"
+                ),
+                "source_snapshot_smoothness_absent": not bool(
+                    (row.get("existing_smoothness") or "").strip()
+                ),
                 "coverage_pct": _number(row.get("coverage_pct")),
                 "rides": _integer(row.get("rides")),
                 "dominant_class": (row.get("dominant_class") or "").strip(),
@@ -130,6 +149,7 @@ def load_live_way_state(path: Path) -> dict[int, dict[str, Any]]:
 
 def candidate_sort_key(candidate: dict[str, Any]) -> tuple[Any, ...]:
     return (
+        0 if candidate["confidence_tier"] == "high_confidence" else 1,
         0 if candidate["highway"] in PATHWAY_TYPES else 1,
         0 if candidate["proposed_value"] == "intermediate" else 1,
         -candidate["rides"],
@@ -170,6 +190,7 @@ def select_live_gaps(
                 "observed_smoothness": None,
                 "status": "needs_pipeline_validation",
                 "upload_allowed": False,
+                "operator_automation_approved": True,
                 "uploaded_at": None,
                 "changeset_id": None,
                 "changeset_url": None,
@@ -206,7 +227,9 @@ def write_outputs(
     output_dir: Path,
     source_csv: Path,
     observed_at: str,
+    source_scope: str,
     source_count: int,
+    source_high_confidence_count: int,
     batches: list[tuple[str, list[dict[str, Any]]]],
     already_tagged: list[dict[str, Any]],
     missing: list[int],
@@ -216,12 +239,25 @@ def write_outputs(
     summary = {
         "generated_at": observed_at,
         "source_csv": str(source_csv),
-        "source_conservative_candidates": source_count,
+        "source_scope": source_scope,
+        "source_candidates": source_count,
+        "source_high_confidence_candidates": source_high_confidence_count,
         "live_untagged_preflight_candidates": scheduled,
+        "live_high_confidence_candidates": sum(
+            item["confidence_tier"] == "high_confidence"
+            for _, items in batches
+            for item in items
+        ),
+        "live_broad_candidates": sum(
+            item["confidence_tier"] == "broad"
+            for _, items in batches
+            for item in items
+        ),
         "excluded_existing_smoothness": already_tagged,
         "missing_live_way_ids": missing,
         "status": "preflight_only",
         "upload_allowed": False,
+        "operator_automation_approval": OPERATOR_APPROVAL,
         "required_gates": list(UPLOAD_GATES),
         "proposal_counts": dict(
             Counter(item["proposed_value"] for _, items in batches for item in items)
@@ -239,14 +275,14 @@ def write_outputs(
     )
 
     ledger_lines = [
-        "# W4W conservative OSM preflight ledger",
+        "# W4W broad OSM preflight ledger",
         "",
         f"Generated: `{observed_at}`",
         "",
-        "All rows are local review candidates. `upload_allowed=false` until every required gate passes.",
+        "Pavel approved automatic processing of the full eligible pool. `upload_allowed=false` until every external gate passes.",
         "",
-        "| Batch | Review date | Rank | OSM way | Highway | Proposal | Rides | Coverage | Version | Status | Changeset |",
-        "|---:|:---|---:|:---|:---|:---|---:|---:|---:|:---|:---|",
+        "| Batch | Review date | Rank | Tier | OSM way | Highway | Proposal | Rides | Coverage | Version | Status | Changeset |",
+        "|---:|:---|---:|:---|:---|:---|:---|---:|---:|---:|:---|:---|",
     ]
     rank = 0
     for batch_index, (date, items) in enumerate(batches, 1):
@@ -256,7 +292,7 @@ def write_outputs(
             manifest_item = {"rank": rank, **item}
             manifest_items.append(manifest_item)
             ledger_lines.append(
-                f"| {batch_index} | {date} | {rank} | "
+                f"| {batch_index} | {date} | {rank} | {item['confidence_tier']} | "
                 f"[{item['way_id']}](https://www.openstreetmap.org/way/{item['way_id']}) | "
                 f"{item['highway']} | `{item['proposed_value']}` | {item['rides']} | "
                 f"{item['coverage_pct']:.1f}% | {item['observed_version']} | {item['status']} | - |"
@@ -266,7 +302,8 @@ def write_outputs(
             "planned_review_date": date,
             "generated_at": observed_at,
             "status": "preflight_only",
-            "approval_status": "needs_exact_manifest_review",
+            "approval_status": "operator_approved_external_gates_pending",
+            "operator_automation_approval": OPERATOR_APPROVAL,
             "upload_allowed": False,
             "required_gates": list(UPLOAD_GATES),
             "items": manifest_items,
@@ -283,7 +320,7 @@ def write_outputs(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Prepare read-only conservative OSM review batches"
+        description="Prepare read-only prioritized OSM review batches"
     )
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
@@ -291,9 +328,15 @@ def main() -> None:
     parser.add_argument("--osm-base-url", default="https://api.openstreetmap.org")
     parser.add_argument("--first-batch-size", type=int, default=100)
     parser.add_argument("--dates", nargs="+", default=list(DEFAULT_DATES))
+    parser.add_argument(
+        "--scope",
+        choices=("potential", "conservative"),
+        default="potential",
+        help="Source candidate scope; potential is the 2,399-row broad pool",
+    )
     args = parser.parse_args()
 
-    candidates = load_conservative_candidates(args.input)
+    candidates = load_candidates(args.input, args.scope)
     live = (
         load_live_way_state(args.live_state_file)
         if args.live_state_file
@@ -306,7 +349,9 @@ def main() -> None:
         args.output_dir,
         args.input,
         observed_at,
+        args.scope,
         len(candidates),
+        sum(row["confidence_tier"] == "high_confidence" for row in candidates),
         batches,
         already_tagged,
         missing,

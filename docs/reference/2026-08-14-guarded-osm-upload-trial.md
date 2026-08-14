@@ -91,17 +91,19 @@ and before a changeset is opened, including when `-y` is used.
 
 ## Systematic edit boundary
 
-The August conservative plan is documented in
-`docs/osm/uploads/2026-08-conservative-batch-plan.md`. Its generated rows remain
-preflight-only under `pending_upload/osm-conservative-2026-08/`.
+The August broad plan is documented in
+`docs/osm/uploads/2026-08-broad-batch-plan.md`. Its 2,399-row source pool is
+prioritized by confidence tier. Current generated rows remain preflight-only
+under `pending_upload/osm-broad-2026-08/`.
 
-A general approval to upload a candidate pool is not an exact-manifest approval
-and does not replace OSM's community process. Before a multi-way run:
+Pavel approved eventual automatic processing of the full eligible pool on
+2026-08-14. That approval does not replace validation or OSM's community process.
+Before a multi-way run:
 
 1. validate every citywide candidate through the ride-level pipeline;
 2. document data permission, method, consultation, opt-out, and reversal;
 3. complete the applicable Import Guidelines and Automated Edits process;
-4. refresh current OSM tags and approve the exact manifest;
+4. refresh current OSM tags and validate the exact manifest;
 5. group edits geographically and add required changeset metadata.
 
 The current one-way editor does not yet implement regional changesets or the

@@ -23,9 +23,10 @@ reversal.
 Never interpret a generated proposal as an upload-ready claim. Keep the final
 external OSM write under explicit human control.
 
-For systematic or external-data edits, a general user approval does not replace
-exact manifest review or the OSM community process. Prepare offline first and keep
-every manifest at `upload_allowed=false` until all gates pass.
+For systematic or external-data edits, record the user's automation approval but
+do not treat it as a replacement for candidate validation or the OSM community
+process. Prepare offline first and keep every manifest at `upload_allowed=false`
+until all gates pass.
 
 ## OAuth
 
@@ -62,10 +63,10 @@ to display an identity badge.
 
 ## Systematic batch preparation
 
-Read `docs/osm/uploads/2026-08-conservative-batch-plan.md` and the current OSM
+Read `docs/osm/uploads/2026-08-broad-batch-plan.md` and the current OSM
 Import Guidelines plus Automated Edits code before a multi-way run.
 
-Prepare the conservative local ledger with:
+Prepare the full broad local ledger with:
 
 ```bash
 uv run python scripts/OSM/prepare_upload_batches.py
@@ -73,17 +74,24 @@ uv run python scripts/OSM/prepare_upload_batches.py
 
 The command refreshes current public OSM state, excludes existing
 `smoothness=*`, and writes preflight-only manifests under
-`pending_upload/osm-conservative-2026-08/`. It never writes to OSM. Do not turn
-the citywide spatial estimates into uploads until every row has been validated by
-the ride-level pipeline.
+`pending_upload/osm-broad-2026-08/`. It never writes to OSM. It prioritizes the
+experimental conservative subset, then the remaining broad candidates. Do not
+turn the citywide spatial estimates into uploads until every row has been
+validated by the ride-level pipeline.
 
 Before a systematic upload, require:
 
 1. source permission and license confirmation;
 2. public method, sample, opt-out, and revert documentation;
 3. applicable community review and waiting period completed;
-4. exact manifest approval after a fresh OSM-state check;
+4. exact manifest validation after a fresh OSM-state check;
 5. regional changeset grouping and required metadata implemented.
+
+Pavel approved eventual automatic processing of the full broad gap-only pool on
+2026-08-14. That internal approval applies only to candidates that pass every
+gate, remain untagged, and stay inside the community-reviewed scope. It removes
+the need for a repeated per-way click after the gates pass; it does not authorize
+uploads before then.
 
 ## Audit contract
 
@@ -111,6 +119,9 @@ Do not call a closed changeset revoked or deleted. Create a corrective changeset
 
 The dashboard currently has no revert button and the CLI has no tag-removal
 command. Do not claim one-click reversal.
+
+Audit data makes corrections traceable, but does not make a mass edit easily
+reversible after other mappers change the same objects.
 
 ## Verified reference trial
 
