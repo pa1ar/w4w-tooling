@@ -16,7 +16,10 @@ export const TELEMETRY_DIR = path.join(DATA_ROOT, "telemetry_json");
 export const OUTPUT_DIR = path.join(DATA_ROOT, "output");
 export const GEOJSON_DIR = path.join(OUTPUT_DIR, "proposals_geojson");
 export const PENDING_UPLOAD_DIR = path.join(DATA_ROOT, "pending_upload");
-export const BROAD_UPLOAD_LEDGER_DIR = path.join(PENDING_UPLOAD_DIR, "osm-broad-2026-08");
+export const ACTIVE_UPLOAD_LEDGER_DIR = path.join(
+  PENDING_UPLOAD_DIR,
+  "osm-publication-threshold-2026-08",
+);
 
 export const SELECTED_RIDES = path.join(OUTPUT_DIR, "selected_rides.json");
 export const BATCH_MANIFEST = path.join(OUTPUT_DIR, "batch_manifest.json");

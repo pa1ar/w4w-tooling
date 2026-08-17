@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import {
   BATCH_MANIFEST,
-  BROAD_UPLOAD_LEDGER_DIR,
+  ACTIVE_UPLOAD_LEDGER_DIR,
   DEMO_UPLOAD_LOG,
   IS_DEMO_MODE,
   LEDGER_SYNC_ERROR_LOG,
@@ -148,7 +148,7 @@ export async function appendUploadLog(entry: UploadLogEntry): Promise<LedgerProp
   await fs.appendFile(UPLOAD_LOG, JSON.stringify(entry) + "\n", "utf8");
   if (entry.status !== "ok") return { matched: false, updated: false };
   try {
-    return await propagateUploadToLedger(entry, BROAD_UPLOAD_LEDGER_DIR);
+    return await propagateUploadToLedger(entry, ACTIVE_UPLOAD_LEDGER_DIR);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     try {

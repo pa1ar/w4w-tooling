@@ -2,7 +2,7 @@ import "server-only";
 
 import fs from "node:fs/promises";
 import path from "node:path";
-import { BROAD_UPLOAD_LEDGER_DIR } from "./paths";
+import { ACTIVE_UPLOAD_LEDGER_DIR } from "./paths";
 
 export interface BroadBatchItem {
   rank: number;
@@ -50,7 +50,7 @@ export interface FeatureCollection {
 
 export async function readBroadBatchManifest(
   batchId: number,
-  directory = BROAD_UPLOAD_LEDGER_DIR,
+  directory = ACTIVE_UPLOAD_LEDGER_DIR,
 ): Promise<BroadBatchManifest | null> {
   const file = await findBatchFile(batchId, ".json", directory);
   if (!file) return null;
@@ -59,7 +59,7 @@ export async function readBroadBatchManifest(
 
 export async function readBroadBatchGeojson(
   batchId: number,
-  directory = BROAD_UPLOAD_LEDGER_DIR,
+  directory = ACTIVE_UPLOAD_LEDGER_DIR,
 ): Promise<FeatureCollection | null> {
   const file = await findBatchFile(batchId, ".geojson", directory);
   if (!file) return null;
@@ -67,7 +67,7 @@ export async function readBroadBatchGeojson(
 }
 
 export async function readBroadBatchSummaries(
-  directory = BROAD_UPLOAD_LEDGER_DIR,
+  directory = ACTIVE_UPLOAD_LEDGER_DIR,
 ): Promise<BroadBatchSummary[]> {
   let names: string[];
   try {
