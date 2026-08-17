@@ -15,6 +15,22 @@ The active local ledger is
 `scripts/OSM/prepare_threshold_upload_batch.py`, which refreshes the 24 live OSM
 ways, refuses existing `smoothness=*`, and makes no OSM writes.
 
+Batch 2 completed at `2026-08-17T11:56:26Z`:
+
+- 24 of 24 unique ways pushed and logged
+- 24 unique changesets, all applying `smoothness=bad`
+- 24 of 24 before-state checks confirmed the tag was absent
+- 0 upload errors and 0 ledger-sync errors
+- first changeset: [187583575](https://www.openstreetmap.org/changeset/187583575)
+- final changeset: [187583650](https://www.openstreetmap.org/changeset/187583650)
+
+A fresh public OSM verification at `2026-08-17T11:57:26Z` returned all 24
+batch-2 ways with exact tag, changeset, and resulting-version matches. A second
+check across the complete active tier returned 124 of 124 exact matches. The
+final published tier contains 76 `smoothness=intermediate` and 48
+`smoothness=bad` ways. Routine publication is complete at the voluntary cutoff;
+the remaining broad candidates stay deferred.
+
 ## Decision and current scope
 
 Pavel approved eventual automatic processing of the full broad gap-only source
@@ -72,8 +88,9 @@ Every live `smoothness` value and latest changeset ID exactly matched the local
 batch ledger. No mismatch or missing way was found.
 
 The active local per-way ledger and JSON manifests are in
-`pending_upload/osm-broad-2026-08/`. The older conservative-only directory is
-superseded. Generated operational data remains gitignored. Actual successful
+`pending_upload/osm-publication-threshold-2026-08/`. The broad and older
+conservative-only directories are superseded operational snapshots. Generated
+operational data remains gitignored. Actual successful
 edits continue to be recorded in `output/upload_log.jsonl`; approved audit
 summaries must be copied into tracked documentation for durable reporting.
 
