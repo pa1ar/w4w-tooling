@@ -1,0 +1,7 @@
+record_type,scope,ways,published,remaining_untagged,network_km,median_coverage_pct,median_rides,intermediate,bad,coverage_min_pct,rides_min,way_length_median_m,bad_run_median_m,match_distance_median_m,decision_role
+scope,Published top-ranked evidence,100,100,0,8.09,100.0,3.0,,,,,,,,Already published and independently rechecked
+scope,Recommended pathway evidence tier,124,100,24,13.09,100.0,2.0,,,,,,,,Recommended voluntary stopping point
+scope,All stronger-tier highway types,311,100,211,29.54,97.7,2.0,,,,,,,,Adds 187 motor and service road ways
+scope,Full broad pool,2398,100,2298,217.53,66.55,1.0,,,,,,,,Includes one-ride and 30% coverage candidates
+profile,Published 100,100,,,,,3.0,76,24,70.6,2,55.5,46.1,1.15,
+profile,Next 24,24,,,,,2.0,0,24,70.5,2,171.5,46.3,0.90,
