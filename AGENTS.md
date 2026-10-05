@@ -1,5 +1,8 @@
 # W4W Tooling
 
+- W4W OP in Craft, the durable project page with state, decisions, features and ops. Start here: craftdocs://open?spaceId=8ac88104-eb82-9c72-9014-d28fdea88b25&blockId=2999DD75-F660-429F-BCBD-B9AC2FC6E46F
+- Tasks: Pavel intents live on The Board in Craft, project W4W OP. Dev issues live in this repo as GitHub issues. Linear and LABS Issues are retired.
+
 ## Project
 
 Python pipeline + CLIs for Wheels4Wheels OSM smoothness proposals.
