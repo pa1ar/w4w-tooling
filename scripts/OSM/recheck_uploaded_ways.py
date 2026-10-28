@@ -61,8 +61,8 @@ def pushed_ways(pending: Path) -> dict[int, dict]:
                 "ledger_coverage_pct": float(match.group(5)),
             }
         for section in re.findall(r"## Withdrawn[^\n]*\n(.*?)(?=\n## |\Z)", text, re.S):
-            withdrawn.update(int(w) for w in re.findall(r"ways? (\d{6,})", section))
-            withdrawn.update(int(w) for w in re.findall(r"and (\d{6,})", section))
+            for removed in re.findall(r"removed `smoothness` from ways? ([^.]*)\.", section):
+                withdrawn.update(int(w) for w in re.findall(r"\b(\d{6,})\b", removed))
     return {way_id: info for way_id, info in ways.items() if way_id not in withdrawn}
 
 
