@@ -127,6 +127,11 @@ reversible after other mappers change the same objects.
 
 ## Verified reference trial
 
+Publication threshold for way-level tags: at least 70% way coverage and at
+least two distinct rides, where a ride counts only if it covers at least 10%
+of the way on its own. Count duplicated telemetry files once. Recheck uploaded
+ways with `scripts/OSM/recheck_uploaded_ways.py` before any new batch.
+
 On 2026-08-14, ride `257673408` pushed only way `987191899` as
 `smoothness=intermediate` with 95% coverage and 100% agreement. OSM changeset
 `187435440` changed the way from version 13 to 14. The prior state had no

@@ -53,6 +53,15 @@ not the production pipeline's official threshold. It requires at least 70%
 modeled coverage and evidence from at least two rides. The full broad pool uses
 at least 30% modeled coverage, at least one ride, and a valid proposal.
 
+### Ride counting rule (2026-10-28)
+
+A ride counts toward the two-ride threshold only when its own sections cover at
+least 10% of the way. Before this rule, a ride that grazed a way's end counted
+as a second confirmation. `scripts/OSM/tallinn_coverage.py` applies the rule
+when it builds candidates, and `scripts/OSM/recheck_uploaded_ways.py` rechecks
+already uploaded ways against it. The recheck of the 2026-08 uploads withdrew
+9 tags in changesets 191115729 and 191144360; see the upload ledgers.
+
 ## Priority and review schedule
 
 Rows are sorted by confidence tier first. Within a tier, pathway types precede

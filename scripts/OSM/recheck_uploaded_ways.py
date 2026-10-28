@@ -33,7 +33,7 @@ PENDING = PROJECT_ROOT / "pending_upload"
 MATCH_DISTANCE_M = 8
 BUFFER_M = 8
 MIN_MOVING_M_PER_POINT = 0.3  # sections are resampled to ~1 m per point; far below that means no movement
-MIN_RIDE_COVERAGE = 0.30
+MIN_RIDE_COVERAGE = 0.10
 MIN_WAY_COVERAGE = 0.70
 MIN_DISTINCT_RIDES = 2
 
@@ -160,9 +160,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--sections", type=Path, required=True, help="gps_paths_colored.json used for the uploads")
     parser.add_argument("--telemetry-dir", type=Path, help="raw ride telemetry, used to hash rides")
-    parser.add_argument("--analyze", type=Path, default=COVERAGE_DIR / "analyze.py")
+    parser.add_argument("--analyze", type=Path, default=Path(__file__).parent / "tallinn_coverage.py")
     parser.add_argument("--min-ride-coverage", type=float, default=MIN_RIDE_COVERAGE,
-                        help="share of the way a ride must cover on its own to count (default: 0.30)")
+                        help="share of the way a ride must cover on its own to count (default: 0.10)")
     parser.add_argument("--output", type=Path, default=PROJECT_ROOT / "output" / "osm-upload-recheck.csv")
     args = parser.parse_args()
 
